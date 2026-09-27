@@ -6,7 +6,7 @@ int main() {
     cout << "Input angka 0-100: ";
     cin >> n;
     
-    char kata[20][20] {
+    string kata[] {
         "nol", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas", "tujuh belas", "delapan belas", "sembilan belas"
     };
 
@@ -22,7 +22,7 @@ int main() {
             cout << " " << kata[satuan];
         }
         cout << endl;
-
+        
     } else if (n == 100) {
         cout << n << " : seratus" << endl;
     } else {
