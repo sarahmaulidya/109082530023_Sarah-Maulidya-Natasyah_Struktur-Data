@@ -7,28 +7,36 @@ Bahasa C++ diciptakan oleh Bjarne Stroustrup di AT&T Bell Laboratories awal tahu
 ### A. Dasar Pemrograman<br/>
 
 #### 1. Struktur program C++
-Struktur bahasa C++ selalu dimulai dari deklarasi library #include <iostream>, definisi konstanta, tippe data, variabel, fungsi/prosedur, dan program utama [1]. Elemen-elemen yang digunakan pada bahasa C++ sudah diatur sesuai dengan kaidah agar alur programnya berjalan dengan benar [2].
+Struktur bahasa C++ selalu dimulai dari deklarasi library #include <iostream>, definisi konstanta, tipe data, variabel, fungsi/prosedur, dan program utama int main()[1]. Elemen-elemen yang digunakan pada bahasa C++ sudah diatur sesuai dengan kaidah agar alur programnya berjalan dengan benar [2].
 #### 2. Tipe Data dan Variabel
-Sama seperti bahasa pemrograman lain, variabel digunakan untuk menyimpan nilai pada program yang sedang berjalan [1]. Terdapat juga konstanta untuk menyatakan nilai yang selalu tetap [1]. Biasanya untuk mendeklarasikan konstanta, perlu ditambahkan kata const di awal tipe variabel [1].
+Sama seperti bahasa pemrograman lain, variabel digunakan untuk menyimpan nilai pada program yang sedang berjalan [1]. Biasanya variabel dideklarasikan seperti tipe_data nama_variabel; contohnya (int a;). Terdapat juga konstanta untuk menyatakan nilai yang selalu tetap [1]. Biasanya untuk mendeklarasikan konstanta, perlu ditambahkan kata const di awal tipe variabel [1].
 
 ### B. Input/Output<br/>
-Untuk menghasilkan output, perlu menggunakan fungsi cout() untuk mencetak data/teks/konstanta/variabel [1]. Sedangkan untuk meminta input dari pengguna menggunakan fungsi cin() [1].
+Untuk menghasilkan output, perlu menggunakan fungsi cout dengan operator << untuk mencetak data/teks/konstanta/variabel [1]. Sedangkan untuk meminta input dari pengguna menggunakan fungsi cin dengan operator >> [1].
 
 ### C. Operator
-Operator digunakan untuk melakukan operasi/manipulasi/perhitungan dari variabel yang ada [1]. Terdapat beberapa contoh operator sperti operator aritmatika, operator assignment, operator logika, operator unary, operator sizeof, operator increment dan decrement[1]. Operator berfungsi untuk memproses suatu logika dalam program [2].
+Operator digunakan untuk melakukan operasi/manipulasi/perhitungan dari variabel yang ada [1]. Terdapat beberapa contoh operator seperti operator aritmatika (+, -, *, /, %), operator assignment, operator logika, operator unary, operator sizeof, operator increment dan decrement[1]. Operator berfungsi untuk memproses suatu logika dalam program [2].
 
 ### D. Pemodifikasi Tipe
-Biasanya, pemodifikasian tipe ada diawal tipe data kecuali untuk void. Modifikasi tipe data diantaranya unsigned, short, dan long [1].
+Biasanya, pemodifikasian tipe ada diawal tipe data kecuali untuk void. Modifikasi tipe data diantaranya unsigned, short, dan long yang biasanya digunakan untuk mengubah jangkauan nilai suatu tipe data [1].
 
 ### E. Kondisional
-Kondisional biasanya digunakan untuk pengambilan keputusan dalam penyelesaian masalah [1]. Terdapat tiga jenis  kondisi dalam bahasa C++ yaitu if, if-else, dan switch[1]. Jika menggunakan kondisional, program nantinya akan memilih perintah yang akan dikerjakan atau tidak tergantung dengan syarat yang diminta [2].
+Kondisional biasanya digunakan untuk pengambilan keputusan dalam penyelesaian masalah [1]. Terdapat tiga jenis  kondisi dalam bahasa C++ yaitu if, if-else, dan switch[1]. Jika menggunakan kondisional, program nantinya akan memilih perintah yang akan dikerjakan atau tidak tergantung dengan syarat yang diminta [2]. Berikut bentuk umumnya:
+<pre>
+if (kondisi) {
+    // pernyataan jika benar
+} else {
+    // pernyataan jika salah
+}
+</pre>
+
 
 ### F. Perulangan
 Perulangan ini merupakan salah satu kelebihan karena digunakan untuk mempersingkat waktu dan meringkas kode dalam mengeksekusi suatu program [1]. Perulangan pada bahasa C++ diantaranya:
 #### 1. Perulangan dengan for dan while 
 Biasanya digunakan saat kondisi terpenuhi, dan jika tidak maka kondisi akan langsung berhenti[1].
 #### 2.	Perulangan dengan do ... while 
-Perbedaannya terletak pada proses penyeleksian kondisi di bagian bawah (ada pada while)[1]. 
+Perbedaannya terletak pada proses penyeleksian kondisi di bagian bawah (ada pada while) sehingga perulangan biasanya akan dieksekusi minimal satu kali[1]. 
 
 
 ## Unguided 
@@ -63,10 +71,10 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-1.1.png)
+![Screenshot Output Unguided 1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-1.1.png?raw=true)
 
 ##### Output 2
-![Screenshot Output Unguided 1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-1.2.png)
+![Screenshot Output Unguided 1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-1.2.png?raw=true)
 
 Program ini digunakan untuk menerima input dua buah angka bertipe float dari pengguna. Output program berupa hasil dari penjumlahan, pengurangan, perkalian, dan pembagian dari kedua angka yang diinput pengguna. Di program ini terdapat kondisi if-else pada operasi pembagian untuk memvalidasi angka pembagi agar tidak error karena inputnya nol.
 
@@ -111,20 +119,22 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-2.1.png)
+![Screenshot Output Unguided 2.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-2.1.png?raw=true)
 
 ##### Output 2
-![Screenshot Output Unguided 2.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-2.2.png)
+![Screenshot Output Unguided 2.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-2.2.png?raw=true)
 
-penjelasan unguided 2
+Program ini digunakan untuk menerima input angka dari pengguna yang akan menghasilkan output nilai dari angka tersebut dalam bentuk tulisan. Angka yang bisa diinput hanya angka 0-100. Program ini menggunakan array string untuk menyimpan kata angka dari 0-19. Jika inputnya angka dari rentang 0-19 maka output berupa tulisan yang sesuai dengan indeksnya. Jika inputnya angka dari 20-99, program akan memisahkan angka menjadi puluhan dan satuan menggunakan pembagian dan modulo. Jika inputnya 100, maka program akan langsung menampilkan output "seratus" dan jika inputnya selain 0-100 maka akan menampilkan pesan error. 
 
 ### 3. Buatlah program yang dapat memberikan input dan output sbb.
-input: 3
-output:
+input: 3<br>
+output:<br>
+<pre>
 3 2 1 * 1 2 3
   2 1 * 1 2
     1 * 1
       *
+</pre>
 
 ```C++
 #include <iostream>
@@ -165,15 +175,15 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-3.1.png)
+![Screenshot Output Unguided 3.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-3.1.png?raw=true)
 
 ##### Output 2
-![Screenshot Output Unguided 3.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-3.2.png)
+![Screenshot Output Unguided 3.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-1/Output-Unguided-3.2.png?raw=true)
 
-Program ini digunakan untuk menampilkan pola angka mirror dengan tanda (*) sebagai cerminnya sesuai angka yang diinput oleh pengguna. Program ini menggunakan nested loop untuk menyesuaikan jarak spasi setiap baris agar membentuk pola segitiga terbalik. Loop utama digunakan untuk mengatur jumlah baris. Loop pertama di dalam digunakan untuk membuat spasi. Loop kedua di dalam digunakan untuk menghasilkan output angka yang mundur misal 3 2 1. Loop ketiga digunakan untuk menghasilkan output angka yang maju misal 1 2 3. Loop terakhir (di luar loop utama) digunakan untuk memberikan spasi tanda (*).
+Program ini digunakan untuk menampilkan pola angka mirror dengan tanda * sebagai cerminnya sesuai angka yang diinput oleh pengguna. Program ini menggunakan nested loop untuk menyesuaikan jarak spasi setiap baris agar membentuk pola segitiga terbalik. Loop utama digunakan untuk mengatur jumlah baris. Loop pertama di dalam digunakan untuk membuat spasi. Loop kedua di dalam digunakan untuk menghasilkan output angka yang mundur misal 3 2 1. Loop ketiga digunakan untuk menghasilkan output angka yang maju misal 1 2 3. Loop terakhir (di luar loop utama) digunakan untuk memberikan spasi tanda *.
 
 ## Kesimpulan
-...
+Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa sebelum kita mulai mengimplementasikan sebuah program, kita perlu memahami dulu konsep dasar bahasa C++. Contohnya pada unguided 1 diperlukan pemahaman tentang kondisional if-else untuk memvalidasi input agar hasilnya tidak error saat pembagian. Pada unguided 2, penggunaan array juga dapat membantu mempersingkat logika konversi angka. Terakhir, pada unguided 3 program menggunakan perulangan bersarang (nested loop) untuk mengatur pola spasi sesuai angka yang diinput oleh pengguna.
 
 ## Referensi
 [1] Tim Asisten Praktikum. (t.t.). Modul 1: Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama). Telkom University. 
