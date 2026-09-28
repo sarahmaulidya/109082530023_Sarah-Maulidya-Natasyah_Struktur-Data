@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 1 - Codeblocks IDE & Pengenalan Bahas C++ (Bagian Pertama)</h1>
+# <h1 align="center">Laporan Praktikum Modul 1 - Codeblocks IDE & Pengenalan Bahasa C++ (Bagian Pertama)</h1>
 <p align="center">Sarah Maulidya Natasyah - 109082530023</p>
 
 ## Dasar Teori
@@ -41,7 +41,7 @@ Perbedaannya terletak pada proses penyeleksian kondisi di bagian bawah (ada pada
 
 ## Unguided 
 
-### 1. Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
+### 1. Buatlah program yang menerima inputan dua buah bilangan betipe float, kemudian memberikan outputan hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 ```C++
 #include <iostream>
@@ -78,8 +78,10 @@ int main() {
 
 Program ini digunakan untuk menerima input dua buah angka bertipe float dari pengguna. Output program berupa hasil dari penjumlahan, pengurangan, perkalian, dan pembagian dari kedua angka yang diinput pengguna. Di program ini terdapat kondisi if-else pada operasi pembagian untuk memvalidasi angka pembagi agar tidak error karena inputnya nol.
 
-### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di- input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100.
-Contoh: 79 : tujuh puluh sembilan
+### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan diinputkan user adalah bilangan bulat positif mulai dari 0 s.d 100.
+Contoh: 
+<br>
+79 : tujuh puluh sembilan
 
 ```C++
 #include <iostream>
