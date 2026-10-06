@@ -519,12 +519,12 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1.1]()
+![Screenshot Output Unguided 1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-1/Output-Unguided-1.1.png?raw=true)
 
 ##### Output 2
-![Screenshot Output Unguided 1.2]()
+![Screenshot Output Unguided 1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-1/Output-Unguided-1.2.png?raw=true)
 
-penjelasan
+Program ini digunakan untuk menampilkan dua matriks berukuran 3x3 yang diinput oleh pengguna menggunakan array 2 dimensi dan dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3. Dalam program ini terdapat beberapa fungsi. Fungsi ```inputMatriks()``` digunakan untuk menentukan menginput matriks menggunakan perulangan ```for``` agar bisa membaca setiap baris dan kolom. Fungsi ```cetakMatriks``` digunakan pegguna untuk menampilkan isi matriks. Fungsi ```tambah()``` digunakan untuk menjumlahan semua elemen matriks. Fungsi ```kurang()``` digunakan untuk mengurangkakn elemen matriks. Fungsi ```kali()``` digunakan untuk melakukan perkaliain matriks menggunakan perulangan ```for```. Output dari program ini adalah hasil dari keseluruhan operasi. 
 
 ### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel!
 
@@ -575,12 +575,9 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2.1]()
+![Screenshot Output Unguided 2.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-2/Output-Unguided-2.png?raw=true)
 
-##### Output 2
-![Screenshot Output Unguided 2.2]()
-
-penjelasan
+Program ini digunakan untuk menukar nilai tigas variabel menggunakan call by pointer dan call by reference. Fungsi ```tukarPointer()``` digunakan untuk menukar nilai tiga variabel menggunakan call by pointer. Fungsi ```tukarReference``` digunakan untuk menukar nilai tiga variabel menggunakan call by reference. Fungsi ```cetak()``` digunakan untuk menampilkan nilai dari variabel ```a```, ```b```, dan ```c```. Pada fungsi ```main()```, nilai awal variabel adalah 10, 20, dan 30 kemudian nilai tersebut ditukar menggunakan call by pointer dan call by reference. Output dari program ini adalah nilai dari variabel sebelum dan sesuah ditukar. 
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut : arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55} Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini:
 --- Menu Program Array ---<br/>
@@ -672,15 +669,13 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3.1]()
+![Screenshot Output Unguided 3.1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.1.png?raw=true)
+![Screenshot Output Unguided 3.1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.2.png?raw=true)
 
-##### Output 2
-![Screenshot Output Unguided 3.2]()
-
-penjelasan
+Program ini digunakan untuk mencari nilai minimum, maksimum, dan rata – rata dari array tersebut menggunakan fungsi ```cariMinimum()``` untuk mencari nilai minimum fungsi ```cariMaksimum()``` untuk mencari nilai maksimum, dan prosedur ```hitungRataRata()``` untuk menghitung nilai rata–rata. Pada fungsi ```main()```, terdapat kondisi ```switch-case``` yang digunakan untuk memilih operasi yang ingin dijalankan, seperti menampilkan array, mencari nilai maksimum, mencari nilai minimum, dan menghitung niai rata-rata. Output dari program ini adalah isi array, nilai maksimum, nilai minimum, dan nilai rata-rata sesuai dengan pilihan menu yang dipilih.
 
 ## Kesimpulan
-
+Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengolah data menggunakan array, pointer, function, dan posedure. Array juga dapat digunakan untuk menyimpan data dalam bentuk satu dimensi, dua dimensi, dan dimensi banyak. Sedangkann function dan procedure digunakan untuk menjalankan proses tertentu dalam program. Penggunaan call by pointer dan call by reference sapaat digunakan untuk mengubah nilai variabel tanpa  harus konsep dari acara. Penggunaan beberapa konsep ini juga bisa membantu membuat program menjadi lebih terstruktur dan sesuai dengan kebutuhan.
 
 ## Referensi
 [1] Tim Asisten Praktikum. (t.t.). Modul 1: Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama). Telkom University. 
