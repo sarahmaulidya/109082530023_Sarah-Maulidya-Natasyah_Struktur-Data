@@ -659,8 +659,8 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3.1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.1.png?raw=true)
-![Screenshot Output Unguided 3.1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.2.png?raw=true)
+![Screenshot Output Unguided 3.1.1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.1.1.png?raw=true)
+![Screenshot Output Unguided 3.1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-3/Output-Unguided-3.1.2.png?raw=true)
 
 Program ini digunakan untuk mencari nilai minimum, maksimum, dan rata – rata dari array tersebut menggunakan fungsi ```cariMinimum()``` untuk mencari nilai minimum fungsi ```cariMaksimum()``` untuk mencari nilai maksimum, dan prosedur ```hitungRataRata()``` untuk menghitung nilai rata–rata. Pada fungsi ```main()```, terdapat kondisi ```switch-case``` yang digunakan untuk memilih operasi yang ingin dijalankan, seperti menampilkan array, mencari nilai maksimum, mencari nilai minimum, dan menghitung niai rata-rata. Output dari program ini adalah isi array, nilai maksimum, nilai minimum, dan nilai rata-rata sesuai dengan pilihan menu yang dipilih.
 
