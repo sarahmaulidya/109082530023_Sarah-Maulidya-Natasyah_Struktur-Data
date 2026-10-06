@@ -368,17 +368,7 @@ int main() {
 //     return 0;
 // }
 ```
-Pada program ini terdapat call by pointer, call by reference, dan call by value. Call by pointer digunakan untuk menukar nilai dua variabel melalui fungsi ```tukar``` untuk memanipulasi parameter pointer. Pada fungsi ```main```, program memanggil fungsi tersebut dengan mengirimkan alamat memori dari variabel a dan b menggunakan operator ```&``` yang menyebabkan perubahan nilai bersifat permanen. 
-
-.
-.
-.
-.
-.
-.
-.
-.TAMBAHIN LAGIIII
-
+Pada program ini terdapat call by pointer, call by reference, dan call by value. Pada call by pointer, nilai ```a``` dan ```b``` ditukar melalui alamat yang dikirim ke fungsi ```tukar```. Pada call by reference, nilai ```a``` dan ```b``` dapat diubah melalui fungsi, sedangkan pada call by value nilai yang digunakan dalam dungsi hanya berupa salinan sehingga nilai asli tidak berubah.
 ### 10. Call by Value
 ```C++
 #include <iostream>
