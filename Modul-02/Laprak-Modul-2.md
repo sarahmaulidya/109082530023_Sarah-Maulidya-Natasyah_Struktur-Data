@@ -6,9 +6,9 @@
 Array adalah kumpulan data yang memiliki nama dan setiap elemennya bertipe data yang sama [1]. Sebuah array juga bisa dideklarasikan sekaligus dengan nilai-nilai yang diinisialisasikan di antara kurung kurawal ```{}``` [2].
 #### 1. Array Satu Dimensi
 Array satu dimensi adalah array yang hanya terdiri dari satu baris data saja [1]. Umumnya, array satu dimensi ditulis ```tipe_data nama_var[ukuran]```
-Dalam bahasa C++, array disimpan dalam memori dengan lokasi yang berurutan [1]. Indeks pertama pada array dimulai dari 0 dan seterusnya  tergantung jumlah ukuran array yang dibuat [1]. Array satu dimensi ini biasanya mewakili bentuk suatu vektor [2].
+Dalam bahasa C++, array disimpan dalam memori dengan lokasi yang berurutan [1]. Indeks pertama pada array dimulai dari 0 dan seterusnya tergantung jumlah ukuran array yang dibuat [1]. Array satu dimensi ini biasanya mewakili bentuk suatu vektor [2].
 #### 2. Array Dua Dimensi
-Array dua dimensi memiliki bentuk yang seperti tabel yang biasanya digunakan untuk menyimpan data yang terbagi menjadi dua bagian yaitu dimensi pertama dan dimensi kedua [1]. Cara penulisan array ini sebagai berikut.
+Array dua dimensi memiliki bentuk seperti tabel yang biasanya digunakan untuk menyimpan data yang terbagi menjadi dua bagian yaitu dimensi pertama dan dimensi kedua [1]. Cara penulisan array ini sebagai berikut.
 ```C++
 int data_nilai[4][3]; // terdiri dari 4 baris 3 kolom
     nilai[2][0] = 10; //menjelaskan bahwa array yang dimaksud berada pada baris berindeks 2 dan pada kolom berindeks 0.
@@ -668,5 +668,5 @@ Program ini digunakan untuk mencari nilai minimum, maksimum, dan rata–rata dar
 Dari praktikum yang sudah dilakukan, dapat disimpulkan bahwa C++ dapat digunakan untuk mengolah data menggunakan array, pointer, function, dan procedure. Array juga dapat digunakan untuk menyimpan data dalam bentuk satu dimensi, dua dimensi, dan dimensi banyak. Sedangkan function dan procedure digunakan untuk menjalankan proses tertentu dalam program. Penggunaan call by pointer dan call by reference dapat digunakan untuk mengubah nilai variabel melalui fungsi. Penggunaan beberapa konsep ini juga bisa membantu membuat program menjadi lebih terstruktur dan sesuai dengan kebutuhan.
 
 ## Referensi
-[1] Tim Asisten Praktikum. (t.t.). Modul 1: Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama). Telkom University. 
+[1] Tim Asisten Praktikum. (t.t.). Modul 2: Pengenalan Bahasa C++ (Bagian Kedua). Telkom University. 
 <br>[2] Indahyanti, Uce., & Rahmawati Yunianita. (2020). Buku Ajar Algoritma Dan Pemrograman Dalam Bahasa C++. Sidoarjo: Umsida Press. Diakses melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
