@@ -206,7 +206,7 @@ int main() {
         return 0;
 }
 ```
-Program ini menggunakan fungsi bernama ```maks3``` yang menerima tiga parameter integer untuk mencari nilai terbesar diantaranya dengan cara membandingkan setiap nilai secara berurutan menggunakan logika ```if```. Pada fungsi ```main```, program mendeklarasikan tiga variabel integer, lalu meminta pengguna untuk memasukkan tiga angka secara berurutan. Setelah data diterima, program akan memanggil fungsi maks3 dengan ketiga nilai tersebut sebagai argumen dan menampilkan hasil nilai maksimum yang ditemukan.
+Program ini menggunakan fungsi bernama ```maks3``` yang menerima tiga parameter integer untuk mencari nilai terbesar di antaranya dengan cara membandingkan setiap nilai secara berurutan menggunakan logika ```if```. Pada fungsi ```main```, program mendeklarasikan tiga variabel integer, lalu meminta pengguna untuk memasukkan tiga angka secara berurutan. Setelah data diterima, program akan memanggil fungsi maks3 dengan ketiga nilai tersebut sebagai argumen dan menampilkan hasil nilai maksimum yang ditemukan.
 ### 5. Procedure
 ```C++
 #include <iostream>
@@ -514,7 +514,7 @@ int main() {
 ##### Output 2
 ![Screenshot Output Unguided 1.2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-02/Screenshot-Output/Unguided-1/Output-Unguided-1.2.png?raw=true)
 
-Program ini digunakan untuk menampilkan dua matriks berukuran 3x3 yang diinput oleh pengguna menggunakan array 2 dimensi dan dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3. Dalam program ini terdapat beberapa fungsi. Fungsi ```inputMatriks()``` digunakan untuk memasukkan matriks menggunakan perulangan ```for``` agar bisa membaca setiap baris dan kolom. Fungsi ```cetakMatriks()``` digunakan untuk menampilkan isi matriks. Fungsi ```tambah()``` digunakan untuk menjumlahkan elemen matriks. Fungsi ```kurang()``` digunakan untuk mengurangkan elemen matriks. Fungsi ```kali()``` digunakan untuk melakukan perkalian matriks menggunakan perulangan ```for```. Output dari program ini adalah hasil dari keseluruhan operasi. 
+Program ini digunakan untuk menampilkan dua matriks berukuran 3x3 yang diinput oleh pengguna menggunakan array 2 dimensi dan dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3. Dalam program ini terdapat beberapa fungsi. Fungsi ```inputMatriks()``` digunakan untuk memasukkan matriks menggunakan perulangan ```for``` agar bisa membaca setiap baris dan kolom. Fungsi ```cetakMatriks()``` digunakan untuk menampilkan isi matriks. Fungsi ```tambah()``` digunakan untuk menjumlahkan nilai elemen matriks. Fungsi ```kurang()``` digunakan untuk mengurangkan nilai elemen matriks. Fungsi ```kali()``` digunakan untuk melakukan perkalian matriks menggunakan perulangan ```for```. Output dari program ini adalah hasil dari keseluruhan operasi. 
 
 ### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel!
 
