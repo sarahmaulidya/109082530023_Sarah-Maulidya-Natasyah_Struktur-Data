@@ -4,7 +4,7 @@
 ## Dasar Teori
 ### A. Abstract Data Type (ADT)<br/>
 ADT adalah sebuah TYPE yang punya sekumpulan PRIMITIF (operasi dasar) untuk TYPE itu [1]. Pada ADT yang lengkap, terdapat definisi invarian dari TYPE dan aksioma yang berlaku [1]. ADT ini bersifat STATIK [1]. 
-Type dalam ADT berisi ADT yang lain [1]. Contohnya ADT waktu terdiri dari ADT JAM dan ADT DATE atau garis yang terdiri dari dua buah ADT POINT [1]. Pasangan dua buah POINT (Top,Left) dan (Bottom,Right) dinamakan SEGI4 [1]. TYPE dapat diterjemahkan sebagai type terdefinisi dalam bahasa yang bersangkutan [1]. i bahasa C, TYPE ditulis menggunakan struct, sedangkan PRIMITIF dalam konteks prosedural diterjemahkan menjadi fungsi atau prosedur. [1].
+Type dalam ADT berisi ADT yang lain [1]. Contohnya ADT waktu terdiri dari ADT JAM dan ADT DATE atau garis yang terdiri dari dua buah ADT POINT [1]. Pasangan dua buah POINT (Top,Left) dan (Bottom,Right) dinamakan SEGI4 [1]. TYPE dapat diterjemahkan sebagai type terdefinisi dalam bahasa yang bersangkutan [1]. Di bahasa C, TYPE ditulis menggunakan struct, sedangkan PRIMITIF dalam konteks prosedural diterjemahkan menjadi fungsi atau prosedur. [1].
 PRIMITIF dapat dikelompokkan menjadi:
 #### 1. Konstruktor atau Kreator
 Konstruktor atau kreator ini merupakan pembentuk nilai type yang berarti semua variabel bertype tersebut harus melalui konstruktor terlebih dahulu [1]. Biasanya diberi nama Make [1].
