@@ -31,7 +31,7 @@ int main() {
     delLast(List);
     delAfter(List, nodeD, nodeC);
 
-    cout << "--- ISI LIST SETEKAG DILAKUKAN DELETE ---" << endl;
+    cout << "--- ISI LIST SETELAH DILAKUKAN DELETE ---" << endl;
     printList(List);
     cout << "Jumlah node: " << nbList(List) << endl;
     cout << endl;

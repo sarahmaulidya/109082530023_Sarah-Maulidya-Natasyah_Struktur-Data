@@ -26,10 +26,10 @@ address alokasi(string nama, string nim, int umur) {
     /* I.S. sembarang
        F.S. mengembalikan alamat node baru dengan isidata = sesuai parameter dan next = Nil*/
     address nodeBaru = new node;
-    nodeBaru -> isidata.nama = nama;
-    nodeBaru -> isidata.nim = nim;
-    nodeBaru -> isidata.umur = umur;
-    nodeBaru -> next = Nil;
+    nodeBaru->isidata.nama = nama;
+    nodeBaru->isidata.nim = nim;
+    nodeBaru->isidata.umur = umur;
+    nodeBaru->next = Nil;
     return nodeBaru;
 }
 
@@ -37,7 +37,7 @@ address alokasi(string nama, string nim, int umur) {
 void dealokasi(address &node) {
     /* I.S. P terdefinisi
        F.S memori yang digunakan node dikembalikan ke sistem */
-    node -> next = Nil;
+    node->next = Nil;
     delete node;
 }
 
@@ -45,7 +45,7 @@ void dealokasi(address &node) {
 void insertFirst(linkedList &List, address nodeBaru) {
     /* I.S. sembarangan, P sudah dialokasikan
        F.S. menempatkan elemen list (node) pada awal list */
-    nodeBaru -> next = List.first;
+    nodeBaru->next = List.first;
     List.first = nodeBaru;
 }
 
@@ -53,8 +53,8 @@ void insertAfter(linkedList &List, address nodeBaru, address Prev) {
     /* I.S. sembarang, nodeBaru dan Prev alamat salah satu elemen list (node)
        F.S. menempatkan elemen (node) sesusah elemen node prev */
     if (Prev != Nil) {
-        nodeBaru -> next = Prev -> next;
-        Prev -> next = nodeBaru;
+        nodeBaru->next = Prev->next;
+        Prev->next = nodeBaru;
     } else {
         cout << "Node sebelumnya tidak valid!" << endl;
     }
@@ -67,10 +67,10 @@ void insertLast(linkedList & List, address nodeBaru) {
         List.first = nodeBaru;
     } else {
         address nodeBantu = List.first;
-        while (nodeBantu -> next != Nil) {
-            nodeBantu = nodeBantu -> next;
+        while (nodeBantu->next != Nil) {
+            nodeBantu = nodeBantu->next;
         }
-        nodeBantu -> next = nodeBaru;
+        nodeBantu->next = nodeBaru;
     }
 }
 
@@ -81,8 +81,8 @@ void delFirst(linkedList &List) {
     address nodeHapus;
     if (isEmpty(List) == false) {
         nodeHapus = List.first;
-        List.first = List.first -> next;
-        nodeHapus -> next = Nil;
+        List.first = List.first->next;
+        nodeHapus->next = Nil;
         dealokasi(nodeHapus);
     } else {
         cout << "List kosong!" << endl;
@@ -95,15 +95,15 @@ void delLast(linkedList &List) {
     address nodeHapus, nodePrev;
     if(isEmpty(List) == false) {
         nodeHapus = List.first;
-        if(nodeHapus -> next == Nil) {
-            List.first -> next == Nil;
+        if(nodeHapus->next == Nil) {
+            List.first->next == Nil;
             dealokasi(nodeHapus);
         } else {
-            while(nodeHapus -> next != Nil) {
+            while(nodeHapus->next != Nil) {
                 nodePrev = nodeHapus;
-                nodeHapus = nodeHapus -> next;
+                nodeHapus = nodeHapus->next;
             }
-            nodePrev -> next = Nil;
+            nodePrev->next = Nil;
             dealokasi(nodeHapus);
         }
     } else {
@@ -117,10 +117,10 @@ void delAfter(linkedList &List, address nodeHapus, address nodePrev) {
     if(isEmpty(List) == true) {
         cout << "List kosong!" << endl;
     } else { //jika list tidak kosong
-        if (nodePrev != Nil && nodePrev -> next != Nil) {
-            nodeHapus = nodePrev -> next;
-            nodePrev -> next = nodeHapus -> next;
-            nodeHapus -> next = Nil;
+        if (nodePrev != Nil && nodePrev->next != Nil) {
+            nodeHapus = nodePrev->next;
+            nodePrev->next = nodeHapus->next;
+            nodeHapus->next = Nil;
             dealokasi(nodeHapus);
         } else {
             cout << "Node sebelumnya (prev) tidak valid!" << endl;
@@ -137,7 +137,7 @@ void printList(linkedList List) {
     } else {
         address nodeBantu = List.first;
         while (nodeBantu != Nil) {
-            cout << "Nama: " << nodeBantu -> isidata.nama << ", NIM: " << nodeBantu -> isidata.nim << ", Usia: " << nodeBantu -> isidata.umur << endl;
+            cout << "Nama: " << nodeBantu->isidata.nama << ", NIM: " << nodeBantu->isidata.nim << ", Usia: " << nodeBantu->isidata.umur << endl;
             nodeBantu = nodeBantu -> next;
         }
     }
@@ -151,7 +151,7 @@ int nbList(linkedList List) {
     address nodeBantu = List.first;
     while (nodeBantu != Nil) {
         count++;
-        nodeBantu = nodeBantu -> next;
+        nodeBantu = nodeBantu->next;
     }
     return count;
 }
@@ -164,7 +164,7 @@ void deleteList(linkedList &List) {
     nodeBantu = List.first;
     while(nodeBantu != Nil) {
         nodeHapus = nodeBantu;
-        nodeBantu = nodeBantu -> next;
+        nodeBantu = nodeBantu->next;
         dealokasi(nodeHapus);
     }
     List.first = Nil;
