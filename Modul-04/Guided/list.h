@@ -1,5 +1,5 @@
-//hear guard digunakan untuk mencegah file header yang sama 
-//di-include lebih dari sekali dalamm satu program
+//header guard digunakan untuk mencegah file header yang sama 
+//di-include lebih dari sekali dalam satu program
 #ifndef LIST_H
 #define LIST_H
 #define Nil NULL

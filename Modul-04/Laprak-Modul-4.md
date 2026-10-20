@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 ### A. Linked List dengan Pointer <br/>
-LInked list atau biasa disebut list adalah salah satu bentuk struktur data berupa serangkaian elemen data yang saling berhubungan [1]. Struktur ini bersifat fleksibel karena dapat bertambah dan berkurang sesuai kebutuhan [1]. Data yang disimpan dalam linked list bisa berupa data tunggal, misalnya nama bertipe string, atau data majemuk (record), seperti pada data mahasiswa  yang terdiri dari nama, NIM, dan alamat [1]. Linked list dapat dibuat dengan array maupun pointer [1]. Pada praktikum ini linked list yang digunakan adalah pointer karena beberapa alasan, yaitu: 
+Linked list atau biasa disebut list adalah salah satu bentuk struktur data berupa serangkaian elemen data yang saling berhubungan [1]. Struktur ini bersifat fleksibel karena dapat bertambah dan berkurang sesuai kebutuhan [1]. Data yang disimpan dalam linked list bisa berupa data tunggal, misalnya nama bertipe string, atau data majemuk (record), seperti pada data mahasiswa  yang terdiri dari nama, NIM, dan alamat [1]. Linked list dapat dibuat dengan array maupun pointer [1]. Pada praktikum ini linked list yang digunakan adalah pointer karena beberapa alasan, yaitu: 
 #### 1. Array bersifat statis, sedangkan pointer bersifat dinamis [1].
 #### 2. Elemen pada linked list saling berhubungan, sehingga lebih mudah dihubungkan dengan pointer [1].
 #### 3. Sifat linked list yang fleksibel lebih cocok dengan pointer yang bisa diatur sesuai dengan kebutuhan [1].
@@ -14,7 +14,7 @@ Elemen linked list yang diakses dengan pointer dapat menggunakan tanda panah (->
 Singly linked list adalah model linked list yang hanya memiliki satu arah pointer [1]. Setiap elemen terdiri dari dua bagian, yaitu data (informasi utama yang disimpan) dan successor (bagian yang menghubungkan ke elemen berikutnya) [1].
 Sifat-sifat linked list:
 #### 1. Hanya membutuhkan satu pointer [1].
-#### 2. Node terakhir menunjukkan ke ```Nil```, kecuali pada list sirkular [1].
+#### 2. Node terakhir menunjuk ke ```Nil```, kecuali pada list sirkular [1].
 #### 3. Hanya bisa dibaca ke arah depan (maju) [1]. 
 #### 4. Pencarian dilakukan secara sekuensial jika data tidak terurut [1].
 #### 5. Penyisipan dan penghapusan di tengah list lebih mudah [1].
@@ -52,9 +52,9 @@ address alokasi(mahasiswa M){
 }
 ```
 #### 3. Dealokasi
-Proses mengembalikan memori yang sudah tidak dipakai ke sistem [1]. Pada C digunakan ```free(p)```, sedangkan pada C++ digunakan ```delete.p``` [1].
+Proses mengembalikan memori yang sudah tidak dipakai ke sistem [1]. Pada C digunakan ```free(p)```, sedangkan pada C++ digunakan ```delete p``` [1].
 #### 4. Pengecekan List (isEmpty)
-Fungsi untuk mengecek apakah list kosong atau tidak [1]. Fungsi ini membalikkan nilai ```true``` jika list kososng dan ```false``` jika tidak.
+Fungsi untuk mengecek apakah list kosong atau tidak [1]. Fungsi ini mengembalikan nilai ```true``` jika list kosong dan ```false``` jika tidak.
 #### 5. Insert
 Insert adalah operasi menambah elemen baru ke dalam list [1]. Ada tiga jenis, diantaranya:
 ##### a. Insert First
@@ -68,9 +68,9 @@ void insertFirst(List &L, address &P){
 ##### b. Insert Last
 Insert last adalah menyisipkan elemen di akhir list dengan cara mencari elemen terakhir (Q), lalu menghubungkan ```Q->next = P``` [1].
 ##### c. Insert After
-Insert after adalah menyisipkan elemen setelah node tertentu (Q) dengan cara ```P->next = Q->next;``` lalu ````Q->next = P;```.
+Insert after adalah menyisipkan elemen setelah node tertentu (Q) dengan cara ```P->next = Q->next;``` lalu ```Q->next = P;``` [1].
 #### 6. View
-Operasi ini menampilkan isi node dengan cara menelususri list dari elemen pertama, mengunjungi setiap node, lalu menampilkan data yang tersimpan sampai bertemu nilai ```Nil```. Pada ADT, fungsi ini biasanya diberi nama ```printInfo()```.
+Operasi ini menampilkan isi node dengan cara menelusuri list dari elemen pertama, mengunjungi setiap node, lalu menampilkan data yang tersimpan sampai bertemu nilai ```Nil```. Pada ADT, fungsi ini biasanya diberi nama ```printInfo()```.
 #### 7. Delete
 Delete adalah operasi mengambil atau menghapus elemen dari list [1]. Delete terbagi menjadi tiga jenis, yaitu:
 ##### a. Delete First
@@ -86,21 +86,21 @@ void deleteFirst(List &L, address &P){
 Delete last adalah menghapus elemen terakhir [1]. Langkahnya diambil dari elemen terakhir (P), mencari elemen sebelumnya (Q), lalu set ```Q->next = Nil```.
 ##### c. Delete After
 Delete after adalah menghapus node setelah node tertentu (P) [1]. Langkahnya ```Q = P->next```, lalu ```P->next = Q->next;``` dan ```Q->next = Nil;```.
-Setelah dilepaas dari list, elemen akakn dikembalikan atau didealokasi dengan ```dealokasi(P)```. Selain itu, ada fungsi ```delAll(L)``` untuk membebeaskan seluruh memori elemen sehingga list menjadi kosong [1]. 
+Setelah dilepas dari list, elemen akan dikembalikan atau didealokasi dengan ```dealokasi(P)```. Selain itu, ada fungsi ```delAll(L)``` untuk membebaskan seluruh memori elemen sehingga list menjadi kosong [1]. 
 ####  8. Update
-Update adalah operasi untuk mengubah data ynag ada di dalam list [1]. Prosesnya biasanya diawali dengan mencari node yang datanya akan diubah, kemudian isi node tersebut diganti dengan data yang baru [1].
+Update adalah operasi untuk mengubah data yang ada di dalam list [1]. Prosesnya biasanya diawali dengan mencari node yang datanya akan diubah, kemudian isi node tersebut diganti dengan data yang baru [1].
 
 ### E. Primitif pada ADT Linked List
 Semua operasi dasar yang sudah dijelaskan diatas adalah operasi primitif [1]. Primitif-primitif tersebut merupakan bagian dari ADT (Abstract Data Type) list yang disimpan dalam dua file, yaitu:
-#### 1. File ```.h``` berisi protoripe fungsi/prosedur dan tipe data yang dipakai [1].
+#### 1. File ```.h``` berisi prototipe fungsi/prosedur dan tipe data yang dipakai [1].
 #### 2. File ```.cpp``` berisi implementasi dari fungsi/prosedur tersebut [1].
-Agar primitif dapat diiakses, harus diimport ```#include``` terhadap file ```.h```-nya pada program utama (```main.cpp```) [1].
+Agar primitif dapat diakses, harus diimport ```#include``` terhadap file ```.h```-nya pada program utama (```main.cpp```) [1].
 
 ## Guided
 ### a. File list.h
 ```C++
-//hear guard digunakan untuk mencegah file header yang sama 
-//di-include lebih dari sekali dalamm satu program
+//header guard digunakan untuk mencegah file header yang sama 
+//di-include lebih dari sekali dalam satu program
 #ifndef LIST_H
 #define LIST_H
 #define Nil NULL
@@ -201,7 +201,7 @@ void insertFirst(linkedList &List, address nodeBaru) {
 
 void insertAfter(linkedList &List, address nodeBaru, address Prev) {
     /* I.S. sembarang, nodeBaru dan Prev alamat salah satu elemen list (node)
-       F.S. menempatkan elemen (node) sesusah elemen node prev */
+       F.S. menempatkan elemen (node) sesudah elemen node prev */
     if (Prev != Nil) {
         nodeBaru->next = Prev->next;
         Prev->next = nodeBaru;
@@ -370,8 +370,13 @@ int main() {
     return 0;
 }
 ```
-penjelasan
-
+### Penjelasan
+#### a. File list.h
+File ```list.h``` adalah file header yang digunakan untuk mendeklarasikan struktur data mahasiswa yang berisi nama, NIM, dan umur menggunakan struktur node untuk menyimpan data serta pointer ke node berikutnya, dan deklarasi fungsi yang akan digunakan dalam program.
+#### b. File list.cpp
+File ```list.cpp``` berisi implementasi fungsi dan prosedur untuk mengelola linked list, mulai dari membuat list kosong, membuat dan menghapus node, menambahkan node di awal, tengah, atau akhir list, menghapus node, menampilkan data mahasiswa, menghitung jumlah node, hingga menghapus seluruh isi list.
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama yang menjalankan seluruh fungsi tersebut. Program ini membuat lima node berisi data mahasiswa, memasukkannya ke dalam linked list, menampilkan data dan jumlah node, melakukan penghapusan beberapa node, lalu menghapus seluruh list dan menampilkan kondisi list setelah dihapus.
 
 ## Unguided 
 
@@ -410,10 +415,10 @@ int main() {
     P4 = alokasi(12);
     insertFirst(L,P4);
 
-    P4 = alokasi(9);
+    P5 = alokasi(9);
     insertFirst(L,P5);
 
-    printInfo(L)
+    printInfo(L);
     return 0;
 }
 ```
@@ -516,12 +521,15 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1.1]()
+![Screenshot Output Unguided 1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-04/Screenshot_Output/Output-Unguided-1.png?raw=true)
 
-##### Output 2
-![Screenshot Output Unguided 1.2]()
-
-penjelasan
+### Penjelasan
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang digunakan untuk mendeklarasikan struktur data Singly Linked List, yaitu data integer untuk menyimpan nilai, struktur node yang memiliki data dan pointer ```next```, struktur ```List``` yang menyimpan alamat node pertama, serta fungsi dan prosedur yang akan digunakan.
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi implementasi fungsi dan prosedur untuk membuat linked list kosong, mengalokasikan dan menghapus memori node, menampilkan isi linked list, serta menambahkan node baru di awal list.
+#### c. File main.cpp
+File ```main.cpp``` merupakan program utama yang membuat linked list kosong, kemudian membuat lima node dengan nilai 2, 0, 8, 12, dan 9. Setiap node dimasukkan ke awal list menggunakan ```insertFirst()```, sehingga urutan data di dalam list menjadi terbalik dari urutan pembuatannya. Terakhir, pada ```printInfo()``` digunakan untuk menampilkan isi linked list, yaitu 9, 12, 8, 0, 2.
 
 ### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList().
 Output yang diharapkan:
@@ -708,13 +716,18 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2.1]()
+![Screenshot Output Unguided 2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-04/Screenshot_Output/Output-Unguided-2.png?raw=true)
 
-penjelasan
-
+### Penjelasan
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang digunakan untuk mendeklarasikan struktur data Singly Linked List dan fungsi-fungsi yang digunakan. Pada soal 2, file ini dikembangkan dari soal 1 dengan menambahkan deklarasi fungsi untuk menghapus node pertama, node terakhir, node setelah node tertentu, menghitung jumlah node, dan menghapus seluruh list.
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi implementasi fungsi dan prosedur dari soal 1, seperti membuat list kosong, mengalokasikan memori, menampilkan isi list, dan menambahkan node di awal list. Selain itu, ditambahkan fungsi penghapusan node, penghitungan jumlah node, dan penghapusan seluruh isi list sesuai dengan yang diinginkan oleh soal 2.
+#### c. File main.cpp
+File ```main.cpp``` berisi implementasi yang menggunakan kode dasar dari soal 1, yaitu membuat linked list dengan lima node berisi nilai 2, 0, 8, 12, dan 9. Kemudian, kode dikembangkan untuk menghapus node pertama, node terakhir, dan node setelah ```P4```. Setelah itu, program menampilkan isi list dan jumlah node yang tersisa, lalu menghapus seluruh list dan menampilkan jumlah node setelah list kosong.
 
 ## Kesimpulan
-kesimpulan
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Singly Linked List merupakan struktur data yang menghubungkan setiap node menggunakan pointer. Penerapannya dilakukan dengan membuat fungsi untuk menambahkan, menghapus, menampilkan, dan menghitung jumlah node, serta menghapus seluruh isi list menggunakan bahasa C++. Selain itu, praktikum ini membantu memahami pengelolaan node dan penggunaan pointer dalam menghubungkan data, sehingga operasi pada linked list dapat dilakukan secara terstruktur.
 
 ## Referensi
-[1] Tim Asisten Praktikum. (t.t.). Modul 2: Pengenalan Bahasa C++ (Bagian Kedua). Telkom University. 
+[1] Tim Asisten Praktikum. (t.t.). Modul 4: Singly Linked List (Bagian Pertama). Telkom University. 
