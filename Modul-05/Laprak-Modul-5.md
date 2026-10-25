@@ -3,10 +3,10 @@
 
 ## Dasar Teori
 ### A. Singly Linked List <br/>
-Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu dama lain [1]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya bisa bertambahh atau berkurang saat program berjalan [1]. Singly linked list adalah linked list yang hanya punya satu arah pointer, sehingga penelusurannya hanya bisa dilakukan dari depan ke belakang [1]. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1]. Node pertama ditunjuk oleh ```first```, sedangkan node terakhir mempunyai nilai ```next = Nil```. Jika nilai ```first = Nil```, berarti list-nya kosong [1].
- 
+Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu sama lain [2]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya bisa bertambah atau berkurang secara dinamis [2]. Singly linked list adalah linked list yang setiap node-nya hanya punya satu pointer ke node berikutnya [2], sehingga penelusurannya hanya bisa dilakukan dari depan ke belakang. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1][2]. Node pertama ditunjuk oleh ```first``` (pada beberapa sumber disebut ```head```) [1][2], sedangkan node terakhir mempunyai nilai ```next = Nil``` [1][2]. Jika nilai ```first = Nil```, berarti list-nya kosong [1].
+
 ### B. Deklarasi Struktur Data <br/>
-Deklarasi struktur data pada singly linked list ditulis pada file header (```.h```). Contohnya:
+Deklarasi struktur data pada singly linked list ditulis pada file header (```.h```) [1]. Contohnya:
 ```C++
 #define Nil NULL
 
@@ -22,13 +22,14 @@ struct list {
     address first;
 };
 ```
-```infotype``` adalah tipe data yang disimpan dengan tipe integer, ```address``` adalah pointer ke elemen, dan ```list``` digunakan untuk menyimpan nilai ```first``` sebagai petunjuk elemen pertama. untuk mengakses isi node melalui pointer, diperlukan tanda panah. Contohnya ```P->infotype``` dan ```P->next``` [1].
+```infotype``` adalah tipe data yang disimpan dengan tipe integer, ```address``` adalah pointer ke elemen, dan ```list``` digunakan untuk menyimpan nilai ```first``` sebagai petunjuk elemen pertama. Untuk mengakses isi node melalui pointer, diperlukan tanda panah. Contohnya ```P->info``` dan ```P->next``` [1].
 
 ### C. Searching <br/>
-Searching adalah operasi untuk mencari node tertentu di dalam list [1]. Caranya adalah dengan mengunjungi node satu per satu dari awal, lalu berhenti jika node yang dicari sudah ditemukan atau list sudah habis [1]. Operasi ini penting karena dapat membantu operasi lainnya seperti insert after, delete afterm dan update [1].
+Searching adalah operasi untuk mencari node tertentu di dalam list [1]. Caranya adalah dengan mengunjungi node satu per satu dari awal, lalu berhenti jika node yang dicari sudah ditemukan atau list sudah habis [1]. Operasi ini penting karena dapat membantu operasi lainnya seperti insert after, delete after, dan update [1].
+
 Pada searching terdapat beberapa fungsi, salah satunya yang dipakai adalah ```findElm```, yang digunakan untuk mencari elemen dengan ```info = X``` [1]. Jika nilainya ketemu, fungsi akan mengembalikan address elemen tersebut, dan jika tidak ketemu, maka fungsi akan mengembalikan nilai ```Nil``` [1]. Selain itu, ada juga fungsi ```fFindElm``` yang digunakan untuk mengecek apakah alamat P ada di list (menghasilkan nilai ```true``` atau ```false```) dan fungsi ```findBefore``` yang digunakan untuk mencari elemen sebelum P [1].
 ```C++
-address findElm(List L, infotype x) {
+address findElm(list L, infotype x) {
     address P = L.first;
     while (P != Nil) {
         if (P->info == x) {
@@ -42,22 +43,21 @@ address findElm(List L, infotype x) {
 
 ### D. Operasi Dasar pada List <br/>
 #### 1. CreateList, Alokasi, dan Dealokasi <br/>
-Operasi ```CreateList``` digunakan untuk membuat list kosong dengan mengisi nilai ```first``` dengan ```Nil``` [1]. Operasi ```Alokasi``` digunakan untuk memesan memori untuk node baru, sedangkan operasi ```Dealokasi``` digunakan untuk mengembalikan memori node yang sudah tidak dipakai oleh sistem [1].
+Operasi ```CreateList``` digunakan untuk membuat list kosong dengan mengisi nilai ```first``` dengan ```Nil``` [1]. Operasi ```Alokasi``` digunakan untuk memesan memori untuk node baru, sedangkan operasi ```Dealokasi``` digunakan untuk mengembalikan memori node yang sudah tidak dipakai ke sistem [1].
 #### 2. Insert <br/>
-```Insert``` adalah operasi yang digunakan untuk menambah node ke dalam list [1]. ```Insert``` dibagi menjadi tiga jenis, yaitu insert first yang berada di awal list, insert after yang berada setelah node tertentu, dan insert last yang berada di akhir list [1]. Contohnya yaitu:
+```Insert``` adalah operasi yang digunakan untuk menambah node ke dalam list [1]. ```Insert``` dibagi menjadi tiga jenis, yaitu insert first yang berada di awal list, insert after yang berada setelah node tertentu, dan insert last yang berada di akhir list [1]. Pada insert first, node baru ditempatkan di awal list [1]. Caranya, node baru disambungkan ke node pertama, lalu ```first``` dipindahkan ke node baru tersebut. Contohnya yaitu:
 ```C++
-void insertFirst(List &L, address P) {
+void insertFirst(list &L, address P) {
     P->next = L.first;
     L.first = P;
 }
 ```
-Karena node yang baru akan selalu dimasukkan ke depan, data yang dialokasi dengan urutan 2, 0, 8, 12, 9 akan ditampilkan terbalik menjadi ```9, 12, 8, 0, 2``` [1].
 #### 3. Delete <br/>
-Detele adalah operasi yang digunakan untuk menghapus node dari list [1]. Terdapat beberapa jenis detele, yaitu delete first yag digunakan untuk menghapus node pertama, delete last yang digunakan untuk menghapus node terakhir, dan delete after yang digunakan untuk menghapus node setelah node tertentu. Setelah node tersebut dilepas, node akan didealokasikan.
-#### 4. printInfo dan nbList
-```printInfo``` digunakan untuk menampilkan semua info di dalam list dnegan menelusuri kode dari ```first``` sampai niali ```Nil```, sedangkan ```nbList``` diguanakan untuk mengembalikan jumlah elemen pada list [1]. Conrohnya yaitu:
+Delete adalah operasi yang digunakan untuk menghapus node dari list [1]. Terdapat beberapa jenis delete, yaitu delete first yang digunakan untuk menghapus node pertama, delete last yang digunakan untuk menghapus node terakhir, dan delete after yang digunakan untuk menghapus node setelah node tertentu [1]. Alamat node yang dilepas disimpan pada ```P```, lalu node tersebut dapat didealokasikan [1].
+#### 4. printInfo dan nbList <br/>
+```printInfo``` digunakan untuk menampilkan semua info di dalam list dengan menelusuri node dari ```first``` sampai nilai ```Nil```, sedangkan ```nbList``` digunakan untuk mengembalikan jumlah elemen pada list [1]. Contohnya yaitu:
 ```C++
-void printInfo(List L) {
+void printInfo(list L) {
     address P = L.first;
     while (P != Nil) {
         cout << P->info << " ";
@@ -66,13 +66,14 @@ void printInfo(List L) {
     cout << endl;
 }
 ```
-cara menelusuri node tersebut satu persatu, hari ini juga sudah bida dipakai untuk menghitung total info semua elemen, yaitu dengan manambahkan ```P->info``` ke sebuah variabel penampung di setiap node [1]. Untuk list ```9, 12, 8, 0, 2```, maka hasilnya adalah 9 + 12 + 8 + 0 + 31.
-### E. ADT Singly Linked List
-Seuua operasi yang sudah diberikan, operasi diatas termsuk primitif yang menajadi bagian dari Abstract data Type singly linked list [1]. ADT ini disimpan dalam dua file, yaitu file header (```.h```) yang berisi deklarasi tipe data dan prototipw fungsi/prosedur, serta file (```.cpp```) yang berisi implementasinya [1]. Agar bisa diguankan dengan baik, file ```.h``` di include di program utama (```main.cpp```).
+Cara menelusuri node satu per satu ini sama dengan yang dipakai pada operasi searching.
+
+### E. ADT Singly Linked List <br/>
+Semua operasi di atas termasuk primitif yang menjadi bagian dari Abstract Data Type (ADT) singly linked list [1]. ADT ini disimpan dalam dua file, yaitu file header (```.h```) yang berisi deklarasi tipe data dan prototipe fungsi/prosedur, serta file (```.cpp```) yang berisi implementasinya [1]. Agar bisa digunakan dengan baik, file ```.h``` di-include di program utama (```main.cpp```).
 
 
 ## Guided
-### 1. File listBuah.h
+### a. File listBuah.h
 ```C++
 //Header guard digunakan untuk mencegah file header yang sama 
 //di-include lebih dari sekali dalam satu program.
@@ -130,7 +131,7 @@ void FindNodeByRange(linkedlist list, float hargaAwal, float HargaAkhir);
 
 #endif
 ```
-### 2. File listBuah.cpp
+### b. File listBuah.cpp
 ```C++
 #include "listBuah.h"
 #include <iostream>
@@ -422,7 +423,7 @@ void FindNodeByRange(linkedlist list, float hargaAwal, float hargaAkhir) {
     cout << endl;
 }
 ```
-### 3. File main.cpp
+### c. File main.cpp
 ```C++
 #include "listBuah.h"
 
@@ -518,7 +519,7 @@ procedure insertFirst(input/output L : List, input P :address)
 ```
 Kemudian buat implementasi ADT Singly Linked list pada file "Singlylist.cpp".
 Adapun isi data
-![Gambar 5-1 Ilustrasi elemen] (D:\109082530023_Sarah-Maulidya-Natasyah_Struktur-Data\Modul-05\Gambar_5-1.png)
+![Gambar 5-1 Ilustrasi elemen](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-05/Gambar_5-1.png?raw=true)
 Cobalah hasil implementasi ADT pada file “main.cpp”
 ```C++
 int main()
@@ -545,13 +546,101 @@ int main()
     printInfo(L)
     return 0;
 }
-``
+```
 Contoh output:
 ```9 12 8 0 2```
 
-
+#### a. File Singlylist.h
 ```C++
-kode
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+#define Nil NULL
+
+typedef int infotype;
+typedef struct ElmList *address;
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address first;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+
+#endif
+```
+#### b. File Singlylist.cpp
+```C++
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.first = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void printInfo(List L) {
+    address P = L.first;
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    L.first = P;
+}
+```
+#### c. File main.cpp
+```C++
+#include "Singlylist.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    printInfo(L);
+    return 0;
+}
 ```
 ### Output Unguided 2 :
 
@@ -563,9 +652,115 @@ penjelasan
 ```fungsi findElm( L : List, x : infotype ) : address```
 Contoh output:
 ```8 ditemukan dalam list```
-
+#### a. File Singlylist.h
 ```C++
-kode
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+#define Nil NULL
+
+typedef int infotype;
+typedef struct ElmList *address;
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address first;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+address findElm(List L, infotype x);
+
+#endif
+```
+#### b. File Singlylist.cpp
+```C++
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.first = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void printInfo(List L) {
+    address P = L.first;
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    L.first = P;
+}
+
+address findElm(List L, infotype x) {
+    address P = L.first;
+    while (P != Nil) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+    return Nil;
+}
+```
+#### c. File main.cpp
+```C++
+#include "Singlylist.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    address hasil = findElm(L, 8);
+    if (hasil != Nil) {
+        cout << hasil->info << " ditemukan dalam list" << endl;
+    } else {
+        cout << "8 tidak ditemukan dalam list" << endl;
+    }
+
+    return 0;
+}
 ```
 ### Output Unguided 3 :
 
@@ -576,9 +771,109 @@ penjelasan
 ### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).
 Contoh output:
 ```Total info dari kelima elemen adalah 31```
-
+#### a. File Singlylist.h
 ```C++
-kode
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <iostream>
+using namespace std;
+
+#define Nil NULL
+
+typedef int infotype;
+typedef struct ElmList *address;
+
+struct ElmList {
+    infotype info;
+    address next;
+};
+
+struct List {
+    address first;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertFirst(List &L, address P);
+int totalInfo(List L);
+
+#endif
+```
+#### b. File Singlylist.cpp
+```C++
+#include "Singlylist.h"
+
+void CreateList(List &L) {
+    L.first = Nil;
+}
+
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = Nil;
+    return P;
+}
+
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
+}
+
+void printInfo(List L) {
+    address P = L.first;
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.first;
+    L.first = P;
+}
+
+int totalInfo(List L) {
+    int total = 0;
+    address P = L.first;
+    while (P != Nil) {
+        total = total + P->info;
+        P = P->next;
+    }
+    return total;
+}
+```
+#### c. File main.cpp
+```C++
+#include "Singlylist.h"
+
+int main() {
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    CreateList(L);
+
+    P1 = alokasi(2);
+    insertFirst(L, P1);
+
+    P2 = alokasi(0);
+    insertFirst(L, P2);
+
+    P3 = alokasi(8);
+    insertFirst(L, P3);
+
+    P4 = alokasi(12);
+    insertFirst(L, P4);
+
+    P5 = alokasi(9);
+    insertFirst(L, P5);
+
+    cout << "Total info dari kelima elemen adalah " << totalInfo(L) << endl;
+
+    return 0;
+}
 ```
 ### Output Unguided  4:
 
@@ -590,4 +885,5 @@ penjelasan
 kesimpulan
 
 ## Referensi
-[1] Tim Asisten Praktikum. (t.t.). Modul 5: Singly Linked List (Bagian Kedua). Telkom University. 
+[1] Informatics Lab, Fakultas Informatika, Telkom University. (t.t.). Modul 5: Singly Linked List (Bagian Kedua). Telkom University.
+[2] A. F. Akbar, "Memahami Konsep dan Jenis-Jenis Linked List dalam Struktur Data," D4 Manajemen Informatika, Universitas Negeri Surabaya, 3 September 2024. [Online]. Tersedia: https://terapan-ti.vokasi.unesa.ac.id/post/memahami-konsep-dan-jenis-jenis-linked-list-dalam-struktur-data
