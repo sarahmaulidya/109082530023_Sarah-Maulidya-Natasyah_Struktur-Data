@@ -645,8 +645,17 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2]()
-penjelasan
+![Screenshot Output Unguided 2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-05/Screenshot_Output/Output-Unguided-2.png?raw=true)
+
+### Penjelasan
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, dan ```insertFirst```.
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```. Karena selalu dimasukkan di depan, urutan list jadi kebalik, yaitu 9, 12, 8, 0, 2. Terakhir isi list ditampilkan dengan ```printInfo``` dan program selesai dengan ```return 0```.
 
 ### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.
 ```fungsi findElm( L : List, x : infotype ) : address```
@@ -765,8 +774,20 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3]()
-penjelasan
+![Screenshot Output Unguided 3](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-05/Screenshot_Output/Output-Unguided-3.png?raw=true)
+
+### Penjelasan
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```findElm``` untuk mencari node.
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
+
+Fungsi ```findElm``` dipakai untuk mencari node yang ```info```-nya sama dengan ```x```. Penelusuran dimulai dari ```first```, lalu berpindah ke node berikutnya satu per satu. Kalau ```info``` sama dengan ```x```, fungsi langsung mengembalikan alamat node itu. Kalau sampai ```Nil``` belum ketemu juga, fungsi mengembalikan ```Nil```.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```, sehingga urutan list jadi 9, 12, 8, 0, 2.
+Setelah itu program mencari node yang isinya 8 dengan ```findElm```, dan hasilnya disimpan di ```hasil```. Kalau ```hasil``` bukan ```Nil```, artinya node ditemukan, jadi program menampilkan "8 ditemukan dalam list". Kalau ```hasil``` adalah ```Nil```, program menampilkan "8 tidak ditemukan dalam list". Karena angka 8 ada di list, outputnya "8 ditemukan dalam list". Program selesai dengan ```return 0```.
 
 ### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).
 Contoh output:
@@ -878,11 +899,23 @@ int main() {
 ### Output Unguided  4:
 
 ##### Output 1
-![Screenshot Output Unguided 4]()
-penjelasan
+![Screenshot Output Unguided 4](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-05/Screenshot_Output/Output-Unguided-4.png?raw=true)
+
+### Penjelasan
+#### a. File Singlylist.h
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```totalInfo``` untuk menghitung jumlah semua info.
+
+#### b. File Singlylist.cpp
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
+
+Fungsi ```totalInfo``` dipakai untuk menjumlahkan semua ```info``` di dalam list. Awalnya variabel ```total``` diisi 0. Lalu list ditelusuri dari ```first``` sampai ```Nil```, dan setiap node ```info```-nya ditambahkan ke ```total```. Setelah semua node dilewati, fungsi mengembalikan nilai ```total```.
+
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```, sehingga urutan list jadi 9, 12, 8, 0, 2.
+Setelah itu program memanggil ```totalInfo``` untuk menjumlahkan semua info, yaitu 9 + 12 + 8 + 0 + 2 = 31. Hasilnya langsung ditampilkan dengan tulisan "Total info dari kelima elemen adalah 31". Program selesai dengan ```return 0```.
 
 ## Kesimpulan
-kesimpulan
+Singly linked list adalah struktur data yang terdiri dari node-node yang saling terhubung lewat pointer, dan setiap node hanya punya satu pointer ke node berikutnya. Karena memakai alokasi memori dinamis, jumlah node bisa bertambah atau berkurang sesuai kebutuhan. Operasi dasarnya, yaitu insert, delete, update, dan searching, dilakukan dengan mengatur pointer ```next``` dan menelusuri list dari ```first``` sampai ```Nil```. Semua operasi tersebut bisa disusun sebagai ADT, dengan deklarasi di file ```.h``` dan implementasi di file ```.cpp```.
 
 ## Referensi
 [1] Informatics Lab, Fakultas Informatika, Telkom University. (t.t.). Modul 5: Singly Linked List (Bagian Kedua). Telkom University.
