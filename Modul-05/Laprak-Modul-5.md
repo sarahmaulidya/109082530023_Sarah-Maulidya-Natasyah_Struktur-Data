@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 ### A. Singly Linked List <br/>
-Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu dama lain [1]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya bisa bertambahh atau berkurang saat program berjalan [1]. Singly linked list adalah linked list yang hanya punya satu arah pointer, sehingga penelusurannya hanya bisa dilakukan dari depan ke belakang [1]. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1]. Node pertama ditunjuk oleh ```first```, sedangkan node terakhir mempunyai nilai ```next = Nil```. Jika nilai ```first = Nil```, bearti list-nya kosong [1].
+Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu dama lain [1]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya bisa bertambahh atau berkurang saat program berjalan [1]. Singly linked list adalah linked list yang hanya punya satu arah pointer, sehingga penelusurannya hanya bisa dilakukan dari depan ke belakang [1]. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1]. Node pertama ditunjuk oleh ```first```, sedangkan node terakhir mempunyai nilai ```next = Nil```. Jika nilai ```first = Nil```, berarti list-nya kosong [1].
  
 ### B. Deklarasi Struktur Data <br/>
 Deklarasi struktur data pada singly linked list ditulis pada file header (```.h```). Contohnya:
@@ -490,28 +490,65 @@ int main(){
     return 0;
 }
 ```
-penjelasan 
-
+### Penjelasan
+#### a. File listBuah.h
+File ```listBuah.h``` adalah file header yang berisi deklarasi dari struktur data dan beberapa fungsi. Pada file ini terdapat beberapa struct, yaitu struct ```buah``` yang digunakan untuk menyimpan nama, jumlah, dan harga buah. Terdapat juga struct ```node``` yang berisi ```isidata``` yang digunakan untuk menyimpan data buah dan ```next``` yang digunakan untuk menunjuk ke node selanjutnya. Pada struct ```linkedlist``` berisi nilai ```first``` yaitu alamat node pertama. List akan kosong jika nilai ```first``` bernilai ```Nil```. Di file ini juga ada ```address``` yang digunakan sebagai pointer ke node.
+#### b. File listBuah.cpp
+File ```listBuah.cpp``` berisi implementasi dari semua operasi yang ada pada program ini. Terdapat operasi dasar yaitu membuat list kosong, mengalokasi dan mendealokasi node, serta menampilkan list dan menghitung jumlah node. Terdapat juga operasi insert dan delete yang dilakukan di awal, di akhir, atau setelah node tertentu. Operasi update digunakan untuk mengganti data pada node pertama, terakhir, atau setelah node tertentu melalui input. Operasi searching digunakan untuk mencari node berdasarkan nama, alamat, atau rentang harga. Semua operasi yang ada pada file ini menggunakan penelusuran dari nilai ```first``` sampai ```Nil```.
+#### c. File main.cpp
+File ```main.cpp``` digunakan untuk membuat lima node buah, lalu menyisipkannya sehingga urutannya menjadi "Jeruk, Pir, Semangka, Apel, Durian". Setelah itu, data dari beberapa node akan diupdate dan dilakukan pencarian. Lalu node pertama, terakhir, dan node setelah Pir dihapus, sehingga tersisa Pir dan Apel. Terakhir, seluruh list akan dihapus.
 
 
 ## Unguided 
 
-### 1. soal
-
+### 2. Buatlah ADT Singly Linked list sebagai berikut di dalam file “Singlylist.h”:
 ```C++
-kode
+Type infotype : int
+Type address : pointer to ElmList
+Type ElmList <
+    info : infotype
+    next : address
+>
+Type List : < First : address >
+procedure CreateList( input/output L : List )
+function alokasi( x : infotype ) -> address
+procedure dealokasi(input/output P : address )
+procedure printInfo( input L : List )
+procedure insertFirst(input/output L : List, input P :address)
 ```
-### Output Unguided 1 :
+Kemudian buat implementasi ADT Singly Linked list pada file "Singlylist.cpp".
+Adapun isi data
+![Gambar 5-1 Ilustrasi elemen] (D:\109082530023_Sarah-Maulidya-Natasyah_Struktur-Data\Modul-05\Gambar_5-1.png)
+Cobalah hasil implementasi ADT pada file “main.cpp”
+```C++
+int main()
+{
+    List L;
+    address P1, P2, P3, P4, P5 = Nil;
+    createList(L);
 
-##### Output 1
-![Screenshot Output Unguided 1.1]()
+    P1 = alokasi(2);
+    insertFirst(L,P1);
 
-##### Output 2
-![Screenshot Output Unguided 1.2]()
+    P2 = alokasi(0);
+    insertFirst(L,P2);
 
-penjelasan
+    P3 = alokasi(8);
+    insertFirst(L,P3);
 
-### 2. soal
+    P4 = alokasi(12);
+    insertFirst(L,P4);
+
+    P5 = alokasi(9);
+    insertFirst(L,P5);
+
+    printInfo(L)
+    return 0;
+}
+``
+Contoh output:
+```9 12 8 0 2```
+
 
 ```C++
 kode
@@ -519,20 +556,34 @@ kode
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2.1]()
-
+![Screenshot Output Unguided 2]()
 penjelasan
 
-### 3. soal
+### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.
+```fungsi findElm( L : List, x : infotype ) : address```
+Contoh output:
+```8 ditemukan dalam list```
+
 ```C++
 kode
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3.1]()
-![Screenshot Output Unguided 3.1]()
+![Screenshot Output Unguided 3]()
+penjelasan
 
+### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).
+Contoh output:
+```Total info dari kelima elemen adalah 31```
+
+```C++
+kode
+```
+### Output Unguided  4:
+
+##### Output 1
+![Screenshot Output Unguided 4]()
 penjelasan
 
 ## Kesimpulan
