@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 ### A. Singly Linked List <br/>
-Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu sama lain [2]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya bisa bertambah atau berkurang secara dinamis [2]. Singly linked list adalah linked list yang setiap node-nya hanya punya satu pointer ke node berikutnya [2], sehingga penelusurannya hanya bisa dilakukan dari depan ke belakang. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1][2]. Node pertama ditunjuk oleh ```first``` (pada beberapa sumber disebut ```head```) [1][2], sedangkan node terakhir mempunyai nilai ```next = Nil``` [1][2]. Jika nilai ```first = Nil```, berarti list-nya kosong [1].
+Linked list adalah struktur data yang berisi kumpulan elemen (node) yang saling terhubung satu sama lain [2]. Linked list dapat dibuat dengan pointer, sehingga jumlah elemennya dapat bertambah atau berkurang secara dinamis [2]. Singly linked list adalah linked list yang setiap node-nya hanya memiliki satu pointer ke node berikutnya [2], sehingga penelusurannya hanya dapat dilakukan dari depan ke belakang. Setiap node mempunyai dua bagian, yaitu ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya [1][2]. Node pertama ditunjuk oleh ```first``` (pada beberapa sumber disebut ```head```) [1][2], sedangkan node terakhir mempunyai nilai ```next = Nil``` [1][2]. Jika nilai ```first = Nil```, berarti list tersebut kosong [1].
 
 ### B. Deklarasi Struktur Data <br/>
 Deklarasi struktur data pada singly linked list ditulis pada file header (```.h```) [1]. Contohnya:
@@ -22,12 +22,12 @@ struct list {
     address first;
 };
 ```
-```infotype``` adalah tipe data yang disimpan dengan tipe integer, ```address``` adalah pointer ke elemen, dan ```list``` digunakan untuk menyimpan nilai ```first``` sebagai petunjuk elemen pertama. Untuk mengakses isi node melalui pointer, diperlukan tanda panah. Contohnya ```P->info``` dan ```P->next``` [1].
+```infotype``` adalah tipe data yang disimpan dengan tipe integer, ```address``` adalah pointer ke elemen, dan ```list``` digunakan untuk menyimpan nilai ```first``` sebagai penunjuk elemen pertama. Untuk mengakses isi node melalui pointer, digunakan tanda panah, contohnya ```P->info``` dan ```P->next``` [1].
 
 ### C. Searching <br/>
 Searching adalah operasi untuk mencari node tertentu di dalam list [1]. Caranya adalah dengan mengunjungi node satu per satu dari awal, lalu berhenti jika node yang dicari sudah ditemukan atau list sudah habis [1]. Operasi ini penting karena dapat membantu operasi lainnya seperti insert after, delete after, dan update [1].
 
-Pada searching terdapat beberapa fungsi, salah satunya yang dipakai adalah ```findElm```, yang digunakan untuk mencari elemen dengan ```info = X``` [1]. Jika nilainya ketemu, fungsi akan mengembalikan address elemen tersebut, dan jika tidak ketemu, maka fungsi akan mengembalikan nilai ```Nil``` [1]. Selain itu, ada juga fungsi ```fFindElm``` yang digunakan untuk mengecek apakah alamat P ada di list (menghasilkan nilai ```true``` atau ```false```) dan fungsi ```findBefore``` yang digunakan untuk mencari elemen sebelum P [1].
+Pada searching terdapat beberapa fungsi, salah satunya adalah ```findElm```, yang digunakan untuk mencari elemen dengan ```info = X``` [1]. Jika nilainya ditemukan, fungsi akan mengembalikan address elemen tersebut, dan jika tidak ditemukan, fungsi akan mengembalikan nilai ```Nil``` [1]. Selain itu, terdapat fungsi ```fFindElm``` yang digunakan untuk memeriksa apakah alamat P ada di dalam list (menghasilkan nilai ```true``` atau ```false```) dan fungsi ```findBefore``` yang digunakan untuk mencari elemen sebelum P [1].
 ```C++
 address findElm(list L, infotype x) {
     address P = L.first;
@@ -42,10 +42,10 @@ address findElm(list L, infotype x) {
 ```
 
 ### D. Operasi Dasar pada List <br/>
-#### 1. CreateList, Alokasi, dan Dealokasi <br/>
-Operasi ```CreateList``` digunakan untuk membuat list kosong dengan mengisi nilai ```first``` dengan ```Nil``` [1]. Operasi ```Alokasi``` digunakan untuk memesan memori untuk node baru, sedangkan operasi ```Dealokasi``` digunakan untuk mengembalikan memori node yang sudah tidak dipakai ke sistem [1].
+#### 1. createList, Alokasi, dan Dealokasi <br/>
+Operasi ```createList``` digunakan untuk membuat list kosong dengan mengisi nilai ```first``` dengan ```Nil``` [1]. Operasi ```alokasi``` digunakan untuk memesan memori untuk node baru, sedangkan operasi ```dealokasi``` digunakan untuk mengembalikan memori node yang sudah tidak dipakai ke sistem [1].
 #### 2. Insert <br/>
-```Insert``` adalah operasi yang digunakan untuk menambah node ke dalam list [1]. ```Insert``` dibagi menjadi tiga jenis, yaitu insert first yang berada di awal list, insert after yang berada setelah node tertentu, dan insert last yang berada di akhir list [1]. Pada insert first, node baru ditempatkan di awal list [1]. Caranya, node baru disambungkan ke node pertama, lalu ```first``` dipindahkan ke node baru tersebut. Contohnya yaitu:
+```Insert``` adalah operasi yang digunakan untuk menambah node ke dalam list [1]. ```Insert``` dibagi menjadi tiga jenis, yaitu insert first yang menambah node di awal list, insert after yang menambah node setelah node tertentu, dan insert last yang menambah node di akhir list [1]. Pada insert first, node baru ditempatkan di awal list [1]. Caranya, node baru disambungkan ke node pertama, lalu ```first``` dipindahkan ke node baru tersebut. Contohnya sebagai berikut:
 ```C++
 void insertFirst(list &L, address P) {
     P->next = L.first;
@@ -53,9 +53,9 @@ void insertFirst(list &L, address P) {
 }
 ```
 #### 3. Delete <br/>
-Delete adalah operasi yang digunakan untuk menghapus node dari list [1]. Terdapat beberapa jenis delete, yaitu delete first yang digunakan untuk menghapus node pertama, delete last yang digunakan untuk menghapus node terakhir, dan delete after yang digunakan untuk menghapus node setelah node tertentu [1]. Alamat node yang dilepas disimpan pada ```P```, lalu node tersebut dapat didealokasikan [1].
+Delete adalah operasi yang digunakan untuk menghapus node dari list [1]. Terdapat beberapa jenis delete, yaitu delete first untuk menghapus node pertama, delete last untuk menghapus node terakhir, dan delete after untuk menghapus node setelah node tertentu [1]. Alamat node yang dilepas disimpan pada ```P```, lalu node tersebut dapat didealokasikan [1].
 #### 4. printInfo dan nbList <br/>
-```printInfo``` digunakan untuk menampilkan semua info di dalam list dengan menelusuri node dari ```first``` sampai nilai ```Nil```, sedangkan ```nbList``` digunakan untuk mengembalikan jumlah elemen pada list [1]. Contohnya yaitu:
+```printInfo``` digunakan untuk menampilkan semua info di dalam list dengan menelusuri node dari ```first``` sampai nilai ```Nil```, sedangkan ```nbList``` digunakan untuk mengembalikan jumlah elemen pada list [1]. Contohnya sebagai berikut:
 ```C++
 void printInfo(list L) {
     address P = L.first;
@@ -66,11 +66,10 @@ void printInfo(list L) {
     cout << endl;
 }
 ```
-Cara menelusuri node satu per satu ini sama dengan yang dipakai pada operasi searching.
+Cara menelusuri node satu per satu ini sama dengan yang digunakan pada operasi searching.
 
 ### E. ADT Singly Linked List <br/>
-Semua operasi di atas termasuk primitif yang menjadi bagian dari Abstract Data Type (ADT) singly linked list [1]. ADT ini disimpan dalam dua file, yaitu file header (```.h```) yang berisi deklarasi tipe data dan prototipe fungsi/prosedur, serta file (```.cpp```) yang berisi implementasinya [1]. Agar bisa digunakan dengan baik, file ```.h``` di-include di program utama (```main.cpp```).
-
+Semua operasi di atas termasuk primitif yang menjadi bagian dari Abstract Data Type (ADT) singly linked list [1]. ADT ini disimpan dalam dua file, yaitu file header (```.h```) yang berisi deklarasi tipe data dan prototipe fungsi/prosedur, serta file (```.cpp```) yang berisi implementasinya [1]. Agar dapat digunakan, file ```.h``` di-include pada program utama (```main.cpp```).
 
 ## Guided
 ### a. File listBuah.h
@@ -493,12 +492,12 @@ int main(){
 ```
 ### Penjelasan
 #### a. File listBuah.h
-File ```listBuah.h``` adalah file header yang berisi deklarasi dari struktur data dan beberapa fungsi. Pada file ini terdapat beberapa struct, yaitu struct ```buah``` yang digunakan untuk menyimpan nama, jumlah, dan harga buah. Terdapat juga struct ```node``` yang berisi ```isidata``` yang digunakan untuk menyimpan data buah dan ```next``` yang digunakan untuk menunjuk ke node selanjutnya. Pada struct ```linkedlist``` berisi nilai ```first``` yaitu alamat node pertama. List akan kosong jika nilai ```first``` bernilai ```Nil```. Di file ini juga ada ```address``` yang digunakan sebagai pointer ke node.
+File ```listBuah.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. Struct ```buah``` digunakan untuk menyimpan nama, jumlah, dan harga buah, sedangkan struct ```node``` berisi ```isidata``` untuk menyimpan data buah dan ```next``` untuk menunjuk ke node berikutnya. Struct ```linkedlist``` berisi ```first``` yaitu alamat node pertama, dan list dianggap kosong jika ```first``` bernilai ```Nil```. Di bagian bawah terdapat prototype operasi dasar, update, dan searching.
 #### b. File listBuah.cpp
-File ```listBuah.cpp``` berisi implementasi dari semua operasi yang ada pada program ini. Terdapat operasi dasar yaitu membuat list kosong, mengalokasi dan mendealokasi node, serta menampilkan list dan menghitung jumlah node. Terdapat juga operasi insert dan delete yang dilakukan di awal, di akhir, atau setelah node tertentu. Operasi update digunakan untuk mengganti data pada node pertama, terakhir, atau setelah node tertentu melalui input. Operasi searching digunakan untuk mencari node berdasarkan nama, alamat, atau rentang harga. Semua operasi yang ada pada file ini menggunakan penelusuran dari nilai ```first``` sampai ```Nil```.
-#### c. File main.cpp
-File ```main.cpp``` digunakan untuk membuat lima node buah, lalu menyisipkannya sehingga urutannya menjadi "Jeruk, Pir, Semangka, Apel, Durian". Setelah itu, data dari beberapa node akan diupdate dan dilakukan pencarian. Lalu node pertama, terakhir, dan node setelah Pir dihapus, sehingga tersisa Pir dan Apel. Terakhir, seluruh list akan dihapus.
+File ```listBuah.cpp``` berisi implementasi dari semua fungsi yang dideklarasikan di ```listBuah.h```. Operasi dasarnya meliputi membuat list kosong, mengalokasi dan mendealokasi node, serta menampilkan list dan menghitung jumlah node. Operasi insert dan delete dapat dilakukan di awal, di akhir, atau setelah node tertentu. Operasi update mengganti data node pertama, terakhir, atau setelah node tertentu melalui input, sedangkan operasi searching mencari node berdasarkan nama, alamat, atau rentang harga. Seluruh operasi tersebut menelusuri list dari ```first``` sampai ```Nil```.
 
+#### c. File main.cpp
+File ```main.cpp``` adalah program utama untuk mencoba semua operasi pada list buah. Pertama dibuat lima node buah yang disisipkan sehingga urutannya menjadi Jeruk, Pir, Semangka, Apel, Durian. Setelah itu beberapa node diupdate, lalu dilakukan pencarian berdasarkan data, alamat, dan rentang harga. Kemudian node pertama, terakhir, dan node setelah Pir dihapus, dan terakhir seluruh list dihapus sehingga jumlah node menjadi 0.
 
 ## Unguided 
 
@@ -520,6 +519,7 @@ procedure insertFirst(input/output L : List, input P :address)
 Kemudian buat implementasi ADT Singly Linked list pada file "Singlylist.cpp".
 Adapun isi data
 ![Gambar 5-1 Ilustrasi elemen](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-05/Gambar_5-1.png?raw=true)
+
 Cobalah hasil implementasi ADT pada file “main.cpp”
 ```C++
 int main()
@@ -648,16 +648,17 @@ int main() {
 
 ### Penjelasan
 #### a. File Singlylist.h
-File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, dan ```insertFirst```.
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. ```Nil``` didefinisikan sebagai ```NULL``` untuk menandai pointer yang kosong, dan ```#ifndef``` digunakan agar file ini tidak di-include berulang kali. Node dibuat melalui struct ```ElmList``` yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk ke node berikutnya, sedangkan struct ```List``` berisi ```first``` yaitu alamat node paling depan. Di bagian bawah terdapat prototype ```createList```, ```alokasi```, ```dealokasi```, ```printInfo```, dan ```insertFirst```.
 
 #### b. File Singlylist.cpp
-File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. ```createList``` digunakan untuk membuat list kosong dengan mengisi ```first``` dengan ```Nil```. ```alokasi``` digunakan untuk membuat node baru dengan ```new``` lalu mengembalikan alamatnya, sedangkan ```dealokasi``` digunakan untuk menghapus node dengan ```delete```. ```printInfo``` menampilkan isi list dari ```first``` sampai ```Nil```, dan ```insertFirst``` memasukkan node baru di depan list, yaitu dengan mengarahkan ```next``` node baru ke ```first``` lalu memindahkan ```first``` ke node baru tersebut.
 
 #### c. File main.cpp
-File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```. Karena selalu dimasukkan di depan, urutan list jadi kebalik, yaitu 9, 12, 8, 0, 2. Terakhir isi list ditampilkan dengan ```printInfo``` dan program selesai dengan ```return 0```.
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` lalu dikosongkan dengan ```createList```. Setelah itu lima node dibuat dengan ```alokasi``` yang berisi 2, 0, 8, 12, dan 9, dan setiap node langsung dimasukkan ke depan list dengan ```insertFirst```. Karena selalu dimasukkan di depan, urutan list menjadi terbalik, yaitu 9, 12, 8, 0, 2, lalu isinya ditampilkan dengan ```printInfo```.
 
 ### 3. Carilah elemen dengan info 8 dengan membuat fungsi baru.
 ```fungsi findElm( L : List, x : infotype ) : address```
+
 Contoh output:
 ```8 ditemukan dalam list```
 #### a. File Singlylist.h
@@ -776,16 +777,13 @@ int main() {
 
 ### Penjelasan
 #### a. File Singlylist.h
-File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```findElm``` untuk mencari node.
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. ```Nil``` didefinisikan sebagai ```NULL``` untuk menandai pointer yang kosong, dan ```#ifndef``` digunakan agar file ini tidak di-include berulang kali. Node dibuat melalui struct ```ElmList``` yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk ke node berikutnya, sedangkan struct ```List``` berisi ```first``` yaitu alamat node paling depan. Di bagian bawah terdapat prototype ```createList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```findElm``` untuk mencari node.
 
 #### b. File Singlylist.cpp
-File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
-
-Fungsi ```findElm``` dipakai untuk mencari node yang ```info```-nya sama dengan ```x```. Penelusuran dimulai dari ```first```, lalu berpindah ke node berikutnya satu per satu. Kalau ```info``` sama dengan ```x```, fungsi langsung mengembalikan alamat node itu. Kalau sampai ```Nil``` belum ketemu juga, fungsi mengembalikan ```Nil```.
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. ```createList``` digunakan untuk membuat list kosong dengan mengisi ```first``` dengan ```Nil```. ```alokasi``` digunakan untuk membuat node baru dengan ```new``` lalu mengembalikan alamatnya, sedangkan ```dealokasi``` digunakan untuk menghapus node dengan ```delete```. ```printInfo``` menampilkan isi list dari ```first``` sampai ```Nil```, dan ```insertFirst``` memasukkan node baru di depan list. ```findElm``` digunakan untuk mencari node yang ```info```-nya sama dengan ```x```, lalu mengembalikan alamat node tersebut jika ditemukan atau ```Nil``` jika tidak ditemukan.
 
 #### c. File main.cpp
-File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```, sehingga urutan list jadi 9, 12, 8, 0, 2.
-Setelah itu program mencari node yang isinya 8 dengan ```findElm```, dan hasilnya disimpan di ```hasil```. Kalau ```hasil``` bukan ```Nil```, artinya node ditemukan, jadi program menampilkan "8 ditemukan dalam list". Kalau ```hasil``` adalah ```Nil```, program menampilkan "8 tidak ditemukan dalam list". Karena angka 8 ada di list, outputnya "8 ditemukan dalam list". Program selesai dengan ```return 0```.
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` lalu dikosongkan dengan ```createList```. Setelah itu lima node dibuat dengan ```alokasi``` yang berisi 2, 0, 8, 12, dan 9, dan setiap node langsung dimasukkan ke depan list dengan ```insertFirst```, sehingga urutan list menjadi 9, 12, 8, 0, 2. Kemudian ```findElm``` digunakan untuk mencari node yang berisi 8 dan hasilnya disimpan di ```hasil```. Jika ```hasil``` bukan ```Nil``` maka muncul tulisan "8 ditemukan dalam list", dan jika ```Nil``` maka muncul "8 tidak ditemukan dalam list". Karena angka 8 ada di dalam list, outputnya adalah "8 ditemukan dalam list".
 
 ### 4. Hitunglah jumlah total info seluruh elemen (9+12+8+0+2=31).
 Contoh output:
@@ -900,19 +898,16 @@ int main() {
 
 ### Penjelasan
 #### a. File Singlylist.h
-File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang dipakai. ```#ifndef``` dan ```#define``` dipakai supaya file ini tidak ter-include berkali-kali. ```Nil``` dibuat sebagai ```NULL``` untuk menandai pointer yang kosong. ```infotype``` adalah tipe data isi node, yaitu integer. ```address``` adalah pointer ke ```ElmList```. Struct ```ElmList``` adalah node yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk node berikutnya. Struct ```List``` berisi ```first``` yaitu alamat node pertama. Di bagian bawah ada prototype dari ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```totalInfo``` untuk menghitung jumlah semua info.
+File ```Singlylist.h``` adalah file header yang berisi deklarasi struktur data dan daftar fungsi yang digunakan. ```Nil``` didefinisikan sebagai ```NULL``` untuk menandai pointer yang kosong, dan ```#ifndef``` digunakan agar file ini tidak di-include berulang kali. Node dibuat melalui struct ```ElmList``` yang berisi ```info``` untuk menyimpan data dan ```next``` untuk menunjuk ke node berikutnya, sedangkan struct ```List``` berisi ```first``` yaitu alamat node paling depan. Di bagian bawah terdapat prototype ```createList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertFirst```, dan fungsi baru ```totalInfo``` untuk menghitung jumlah semua info.
 
 #### b. File Singlylist.cpp
-File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. Prosedur ```CreateList``` membuat list kosong dengan mengisi ```first``` dengan ```Nil```. Fungsi ```alokasi``` membuat node baru dengan ```new```, mengisi ```info``` dengan nilai ```x```, mengisi ```next``` dengan ```Nil```, lalu mengembalikan alamat node tersebut. Prosedur ```dealokasi``` menghapus node dengan ```delete```, lalu mengisi ```P``` dengan ```Nil```. Prosedur ```printInfo``` menampilkan isi list dengan menelusuri node dari ```first``` sampai ```Nil```. Prosedur ```insertFirst``` memasukkan node baru di depan, yaitu ```next``` node baru diarahkan ke ```first```, lalu ```first``` diarahkan ke node baru.
-
-Fungsi ```totalInfo``` dipakai untuk menjumlahkan semua ```info``` di dalam list. Awalnya variabel ```total``` diisi 0. Lalu list ditelusuri dari ```first``` sampai ```Nil```, dan setiap node ```info```-nya ditambahkan ke ```total```. Setelah semua node dilewati, fungsi mengembalikan nilai ```total```.
+File ```Singlylist.cpp``` berisi isi dari semua fungsi yang sudah dideklarasikan di ```Singlylist.h```. ```createList``` digunakan untuk membuat list kosong dengan mengisi ```first``` dengan ```Nil```. ```alokasi``` digunakan untuk membuat node baru dengan ```new``` lalu mengembalikan alamatnya, sedangkan ```dealokasi``` digunakan untuk menghapus node dengan ```delete```. ```printInfo``` menampilkan isi list dari ```first``` sampai ```Nil```, dan ```insertFirst``` memasukkan node baru di depan list. ```totalInfo``` digunakan untuk menjumlahkan semua ```info``` di dalam list, yaitu dengan mengisi variabel ```total``` dengan 0 terlebih dahulu, lalu menelusuri list sambil menambahkan ```info``` setiap node ke ```total```, kemudian hasilnya dikembalikan.
 
 #### c. File main.cpp
-File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` dan lima pointer ```P1``` sampai ```P5```, lalu list dikosongkan dengan ```CreateList```. Setelah itu lima node dibuat dengan ```alokasi``` yang isinya 2, 0, 8, 12, dan 9. Setiap node langsung dimasukkan ke list dengan ```insertFirst```, sehingga urutan list jadi 9, 12, 8, 0, 2.
-Setelah itu program memanggil ```totalInfo``` untuk menjumlahkan semua info, yaitu 9 + 12 + 8 + 0 + 2 = 31. Hasilnya langsung ditampilkan dengan tulisan "Total info dari kelima elemen adalah 31". Program selesai dengan ```return 0```.
+File ```main.cpp``` adalah program utama untuk mencoba ADT yang sudah dibuat. Pertama dibuat list ```L``` lalu dikosongkan dengan ```createList```. Setelah itu lima node dibuat dengan ```alokasi``` yang berisi 2, 0, 8, 12, dan 9, dan setiap node langsung dimasukkan ke depan list dengan ```insertFirst```, sehingga urutan list menjadi 9, 12, 8, 0, 2. Kemudian ```totalInfo``` dipanggil untuk menjumlahkan semua info, yaitu 9 + 12 + 8 + 0 + 2 = 31, dan hasilnya ditampilkan dengan tulisan "Total info dari kelima elemen adalah 31".
 
 ## Kesimpulan
-Singly linked list adalah struktur data yang terdiri dari node-node yang saling terhubung lewat pointer, dan setiap node hanya punya satu pointer ke node berikutnya. Karena memakai alokasi memori dinamis, jumlah node bisa bertambah atau berkurang sesuai kebutuhan. Operasi dasarnya, yaitu insert, delete, update, dan searching, dilakukan dengan mengatur pointer ```next``` dan menelusuri list dari ```first``` sampai ```Nil```. Semua operasi tersebut bisa disusun sebagai ADT, dengan deklarasi di file ```.h``` dan implementasi di file ```.cpp```.
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa singly linked list adalah struktur data yang terdiri dari node-node yang saling terhubung melalui pointer, dan setiap node hanya memiliki satu pointer ke node berikutnya. Karena menggunakan alokasi memori dinamis, jumlah node dapat bertambah atau berkurang sesuai kebutuhan. Operasi dasarnya, yaitu insert, delete, update, dan searching, dilakukan dengan mengatur pointer ```next``` dan menelusuri list dari ```first``` sampai ```Nil```. Seluruh operasi tersebut dapat disusun sebagai ADT, dengan deklarasi pada file ```.h``` dan implementasi pada file ```.cpp```.
 
 ## Referensi
 [1] Informatics Lab, Fakultas Informatika, Telkom University. (t.t.). Modul 5: Singly Linked List (Bagian Kedua). Telkom University.
