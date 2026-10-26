@@ -911,4 +911,5 @@ Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa singly linke
 
 ## Referensi
 [1] Informatics Lab, Fakultas Informatika, Telkom University. (t.t.). Modul 5: Singly Linked List (Bagian Kedua). Telkom University.
+
 [2] A. F. Akbar, "Memahami Konsep dan Jenis-Jenis Linked List dalam Struktur Data," D4 Manajemen Informatika, Universitas Negeri Surabaya, 3 September 2024. [Online]. Tersedia: https://terapan-ti.vokasi.unesa.ac.id/post/memahami-konsep-dan-jenis-jenis-linked-list-dalam-struktur-data
