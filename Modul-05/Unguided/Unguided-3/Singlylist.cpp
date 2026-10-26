@@ -1,6 +1,6 @@
 #include "Singlylist.h"
 
-void CreateList(List &L) {
+void createList(List &L) {
     L.first = Nil;
 }
 

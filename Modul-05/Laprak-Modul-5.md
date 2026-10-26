@@ -554,11 +554,10 @@ Contoh output:
 ```C++
 #ifndef SINGLYLIST_H
 #define SINGLYLIST_H
+#define Nil NULL
 
 #include <iostream>
 using namespace std;
-
-#define Nil NULL
 
 typedef int infotype;
 typedef struct ElmList *address;
@@ -572,7 +571,7 @@ struct List {
     address first;
 };
 
-void CreateList(List &L);
+void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
 void printInfo(List L);
@@ -584,7 +583,7 @@ void insertFirst(List &L, address P);
 ```C++
 #include "Singlylist.h"
 
-void CreateList(List &L) {
+void createList(List &L) {
     L.first = Nil;
 }
 
@@ -621,7 +620,7 @@ void insertFirst(List &L, address P) {
 int main() {
     List L;
     address P1, P2, P3, P4, P5 = Nil;
-    CreateList(L);
+    createList(L);
 
     P1 = alokasi(2);
     insertFirst(L, P1);
@@ -665,11 +664,10 @@ Contoh output:
 ```C++
 #ifndef SINGLYLIST_H
 #define SINGLYLIST_H
+#define Nil NULL
 
 #include <iostream>
 using namespace std;
-
-#define Nil NULL
 
 typedef int infotype;
 typedef struct ElmList *address;
@@ -683,7 +681,7 @@ struct List {
     address first;
 };
 
-void CreateList(List &L);
+void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
 void printInfo(List L);
@@ -696,7 +694,7 @@ address findElm(List L, infotype x);
 ```C++
 #include "Singlylist.h"
 
-void CreateList(List &L) {
+void createList(List &L) {
     L.first = Nil;
 }
 
@@ -744,7 +742,7 @@ address findElm(List L, infotype x) {
 int main() {
     List L;
     address P1, P2, P3, P4, P5 = Nil;
-    CreateList(L);
+    createList(L);
 
     P1 = alokasi(2);
     insertFirst(L, P1);
@@ -796,11 +794,10 @@ Contoh output:
 ```C++
 #ifndef SINGLYLIST_H
 #define SINGLYLIST_H
+#define Nil NULL
 
 #include <iostream>
 using namespace std;
-
-#define Nil NULL
 
 typedef int infotype;
 typedef struct ElmList *address;
@@ -814,7 +811,7 @@ struct List {
     address first;
 };
 
-void CreateList(List &L);
+void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
 void printInfo(List L);
@@ -827,7 +824,7 @@ int totalInfo(List L);
 ```C++
 #include "Singlylist.h"
 
-void CreateList(List &L) {
+void createList(List &L) {
     L.first = Nil;
 }
 
@@ -874,7 +871,7 @@ int totalInfo(List L) {
 int main() {
     List L;
     address P1, P2, P3, P4, P5 = Nil;
-    CreateList(L);
+    createList(L);
 
     P1 = alokasi(2);
     insertFirst(L, P1);

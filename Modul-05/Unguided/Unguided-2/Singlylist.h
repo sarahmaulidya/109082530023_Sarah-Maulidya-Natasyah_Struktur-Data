@@ -1,10 +1,9 @@
 #ifndef SINGLYLIST_H
 #define SINGLYLIST_H
+#define Nil NULL
 
 #include <iostream>
 using namespace std;
-
-#define Nil NULL
 
 typedef int infotype;
 typedef struct ElmList *address;
@@ -18,7 +17,7 @@ struct List {
     address first;
 };
 
-void CreateList(List &L);
+void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
 void printInfo(List L);

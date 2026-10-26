@@ -3,7 +3,7 @@
 int main() {
     List L;
     address P1, P2, P3, P4, P5 = Nil;
-    CreateList(L);
+    createList(L);
 
     P1 = alokasi(2);
     insertFirst(L, P1);
