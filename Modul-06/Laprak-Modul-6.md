@@ -594,7 +594,7 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1]()
+![Screenshot Output Unguided 1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-06/Screenshot_Output/Output-Unguided-1.png?raw=true)
 
 ### Penjelasan
 #### a. File Doublylist.h 
@@ -744,7 +744,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2]()
+![Screenshot Output Unguided 2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-06/Screenshot_Output/Output-Unguided-2.png?raw=true)
 
 ### Penjelasan
 #### a. File Doublylist.h 
@@ -974,7 +974,7 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3]()
+![Screenshot Output Unguided 3](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-06/Screenshot_Output/Output-Unguided-3.png?raw=true)
 
 ### Penjelasan
 #### a. File Doublylist.h 
