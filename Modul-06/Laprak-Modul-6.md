@@ -402,9 +402,9 @@ int main() {
 ### a. File Doublylist.h 
 File ```Doublylist.h``` adalah file header yang berisi deklarasi struktur data dan fungsi yang digunakan dalam program. Struct ```barang``` digunakan untuk menyimpan kode, nama, dan tahun barang. Struct ```elmlist``` memiliki ```info```, ```prev```, dan ```next```, sedangkan struct ```list``` menyimpan alamat node pertama (```first```) dan terakhir (```last```). File ini juga berisi deklarasi fungsi untuk menambah, mencari, menampilkan, dan menghapus data.
 ### b. File Doublylist.cpp 
-File ```Doublylist.cpp``` berisi implementasi fungsi yang sudah dideklarasikan di Doublylist.h. Fungsi ```CreateList``` digunakan untuk membuat list kosong, ```alokasi``` untuk membuat node baru, dan ```dealokasi``` untuk menghapus node dari memori. Selain itu, terdapat fungsi untuk menambah, mencari, menampilkan, dan menghapus data dengan mengatur pointer prev dan next.
+File ```Doublylist.cpp``` berisi implementasi fungsi yang sudah dideklarasikan di ```Doublylist.h```. Fungsi ```CreateList``` digunakan untuk membuat list kosong, ```alokasi``` untuk membuat node baru, dan ```dealokasi``` untuk menghapus node dari memori. Selain itu, terdapat fungsi untuk menambah, mencari, menampilkan, dan menghapus data dengan mengatur pointer ```prev``` dan ```next```.
 ### c. File main.cpp
-File ```main.cpp``` merupakan program utama untuk mencoba operasi Doubly Linked List. Program akan membuat empat data barang, kemudian menjalankan operasi penambahan, pencarian, dan penghapusan node. Hasil setiap operasi ditampilkan menggunakan printInfo agar perubahan isi list dapat dilihat sampai program selesai.
+File ```main.cpp``` merupakan program utama untuk mencoba operasi Doubly Linked List. Program akan membuat empat data barang, kemudian menjalankan operasi penambahan, pencarian, dan penghapusan node. Hasil setiap operasi ditampilkan menggunakan ```printInfo``` agar perubahan isi list dapat dilihat sampai program selesai.
 
 ## Unguided 
 
@@ -748,7 +748,7 @@ int main() {
 
 ### Penjelasan
 #### a. File Doublylist.h 
-File ```Doublylist.h``` yang file header yang berisi deklarasi struktur data dan fungsi yang digunakan dalam program. Struct ```kendaraan``` menyimpan nomor polisi (```nopol```), warna (```warna```), dan tahun pembuatan (```thnBuat```). Struct ```ElmList``` memiliki ```info```, ```next```, dan ```prev```, sedangkan struct ```List``` menyimpan alamat elemen pertama (```First```) dan terakhir (```Last```). Pada nomor ini ditambahkan deklarasi fungsi ```findElm``` untuk mencari elemen, sehingga total ada enam fungsi: ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertLast```, dan ```findElm```.
+File ```Doublylist.h``` adalah file header yang berisi deklarasi struktur data dan fungsi yang digunakan dalam program. Struct ```kendaraan``` menyimpan nomor polisi (```nopol```), warna (```warna```), dan tahun pembuatan (```thnBuat```). Struct ```ElmList``` memiliki ```info```, ```next```, dan ```prev```, sedangkan struct ```List``` menyimpan alamat elemen pertama (```First```) dan terakhir (```Last```). Pada nomor ini ditambahkan deklarasi fungsi ```findElm``` untuk mencari elemen, sehingga total ada enam fungsi: ```CreateList```, ```alokasi```, ```dealokasi```, ```printInfo```, ```insertLast```, dan ```findElm```.
 #### b. File Doublylist.cpp 
 File ```Doublylist.cpp``` berisi implementasi fungsi yang sudah dideklarasikan di ```Doublylist.h```. ```CreateList``` membuat list kosong, ```alokasi``` membuat elemen baru, dan ```dealokasi``` menghapus elemen dari memori. ```printInfo``` menampilkan isi list dari ```Last``` mundur lewat ```prev```, sedangkan ```insertLast``` menambahkan elemen di akhir list. Fungsi baru ```findElm``` menelusuri list dari ```First``` lewat ```next``` untuk mencari elemen dengan nomor polisi yang sama. Jika ditemukan, fungsi mengembalikan alamat elemen tersebut, jika tidak maka mengembalikan ```Nil```.
 #### c. File main.cpp
