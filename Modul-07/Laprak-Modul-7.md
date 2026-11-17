@@ -10,7 +10,8 @@ Stack dapat direpresentasikan menggunakan pointer maupun tabel. Pada representas
 
 ### C. Operasi dalam Stack<br/>
 #### 1. Push
-Push adalah operasi untuk menyisipkan elemen ke tumpukan data yang fungsinya sama dengan insert first pada list biasa [1]. Pada proses ini, elemen baru akan ditempatkan di bagian paling atas stack sehingga posisi Top berpindah ke elemen yang baru dimasukkan [1][2]. Contoh kode:
+Push adalah operasi untuk menyisipkan elemen ke tumpukan data yang fungsinya sama dengan insert first pada list biasa [1]. Pada proses ini, elemen baru akan ditempatkan di bagian paling atas stack sehingga posisi Top berpindah ke elemen yang baru dimasukkan [1][2].<br>
+Contoh kode:
 ```C++
 void push(address P){
     P->next = S.Top;
@@ -188,8 +189,7 @@ procedure balikStack(input/output S : Stack )
 Buatlah implementasi ADT Stack menggunakan Array pada file "stack.cpp" dan "main.cpp"
 ```C++
 int main() {
-cout << "Hello world!" <<
-endl;
+cout << "Hello world!" << endl;
     Stack S;
     createStack(S);
     Push(S,3);
@@ -201,7 +201,7 @@ endl;
     pop(S);
     Push(S,9);
     printInfo(S);
-    cout<<"balik stack"<<endl;
+    cout << "balik stack" << endl;
     balikStack(S);
     printInfo(S);
     return 0;
@@ -331,7 +331,7 @@ int main() {
     pushAscending(S,3);
     pushAscending(S,9);
     printInfo(S);
-    cout<<"balik stack"<<endl;
+    cout << "balik stack" << endl;
     balikStack(S);
     printInfo(S);
     return 0;
@@ -462,7 +462,7 @@ int main() {
 ### Penjelasan
 Pada soal ini ditambahkan prosedur `pushAscending` untuk memasukkan data ke dalam stack dengan urutan naik dari bawah ke atas. Sebelum memasukkan data, program memeriksa apakah stack masih memiliki ruang. Jika belum penuh, data yang lebih besar dari nilai baru akan digeser terlebih dahulu agar urutannya tetap terjaga. Setelah itu, data baru dimasukkan dan nilai `top` diperbarui. Pada `main.cpp`, dimasukkan data 3, 4, 8, 2, 3, dan 9 menggunakan prosedur `pushAscending`. Hasilnya adalah 9 8 4 3 3 2 saat ditampilkan, kemudian berubah menjadi 2 3 3 4 8 9 setelah stack dibalik.
 
-### 3. Tambahkan prosedur ```getInputStream(in/out S : Stack)```. Prosedur akan terus membaca dan menerima input user dan memasukkan setiap input ke dalam stack hingga user menekan tombol enter. Contoh: gunakan ```cin.get()``` untuk mendapatkan inputkan user.
+### 3. Tambahkan prosedur ```getInputStream(in/out S : Stack)```. Prosedur akan terus membaca dan menerima input user dan memasukkan setiap input ke dalam stack hingga user menekan tombol enter.<br> Contoh: gunakan ```cin.get()``` untuk mendapatkan inputkan user.
 ```C++
 int main() {
     cout << "Hello world!" << endl;
@@ -470,7 +470,7 @@ int main() {
     createStack(S);
     getInputStream(S);
     printInfo(S);
-    cout<<"balik stack"<<endl;
+    cout << "balik stack" << endl;
     balikStack(S);
     printInfo(S);
     return 0;
