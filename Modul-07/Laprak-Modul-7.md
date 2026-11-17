@@ -195,7 +195,7 @@ endl;
     Push(S,3);
     Push(S,4);
     Push(S,8);
-    pop(S)
+    pop(S);
     Push(S,2);
     Push(S,3);
     pop(S);
