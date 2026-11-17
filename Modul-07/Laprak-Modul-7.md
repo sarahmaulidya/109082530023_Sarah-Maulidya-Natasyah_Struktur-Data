@@ -18,7 +18,8 @@ void push(address P){
 }
 ```
 #### 2. Pop
-Pop adalah operasi pengambilan elemen dari stack yang mirip dengan delete first pada list linear. Elemen yang diambil merupakan elemen paling atas atau elemen yang pertama kali diakses dalam stack [1]. Prosesnya dilakukan dengan menyimpan elemen yang berada di posisi ```Top```, kemudian menggeser ```Top``` ke elemen di bawahnya [1][2]. Contoh kode:
+Pop adalah operasi pengambilan elemen dari stack yang mirip dengan delete first pada list linear. Elemen yang diambil merupakan elemen paling atas atau elemen yang pertama kali diakses dalam stack [1]. Prosesnya dilakukan dengan menyimpan elemen yang berada di posisi ```Top```, kemudian menggeser ```Top``` ke elemen di bawahnya [1][2].<br>
+Contoh kode:
 ```C++
 address pop(address P){
     P = S.Top;
@@ -28,13 +29,14 @@ address pop(address P){
 ```
 
 ### D. Primitif-Primitif dalam Stack <br/>
-Primitif yang ada dalam stack pada dasarnya sama dengan primitif pada list lainnya, tetapi jumlahnya lebih sedikit karena stack hanya mengoperasikan elemen yang berada di bagian paling atas [1]. Primitif-primitif dalam stack diantaranya:
-#### 1. ```createStack()```
-#### 2. ```isEmpty()```
-#### 3. ```alokasi()```
-#### 4. ```dealokasi()```
-#### 5. fungsi-fungsi pencarian
-#### 6. fungsi primitif lainnya
+Primitif yang ada dalam stack pada dasarnya sama dengan primitif pada list lainnya, tetapi jumlahnya lebih sedikit karena stack hanya mengoperasikan elemen yang berada di bagian paling atas [1].<br>
+Primitif-primitif dalam stack diantaranya:
+1. ```createStack()```
+2. ```isEmpty()```
+3. ```alokasi()```
+4. ```dealokasi()```
+5. fungsi-fungsi pencarian
+6. fungsi primitif lainnya
 
 ### E. Stack Representasi Tabel<br/>
 Stack representasi tabel pada dasarnya memiliki prinsip kerja yang sama dengan stack representasi pointer. Perbedaannya terletak pada pendeklarasian struktur datanya, yaitu menggunakan array berindeks sehingga jumlah elemen dalam stack terbatas [1]. Batas maksimum jumlah elemen ditandai dengan ```Imax``` [1].
@@ -310,10 +312,8 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1.1]()
+![Screenshot Output Unguided 1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-07/Screenshot_Output/Output-Unguided-1.png?raw=true)
 
-##### Output 2
-![Screenshot Output Unguided 1.2]()
 
 ### Penjelasan
 Program ini menggunakan ADT Stack dengan representasi array yang dibagi menjadi tiga file. File `stack.h` berisi struct `Stack` dengan array `info` berukuran 20 dan variabel `top` sebagai penanda posisi data paling atas, serta deklarasi fungsi. File `stack.cpp` berisi fungsi `createStack` untuk membuat stack kosong, `push` untuk menambahkan data, `pop` untuk mengambil data, `printInfo` untuk menampilkan isi stack, dan `balikStack` untuk membalik urutan data. Pada `main.cpp`, dilakukan beberapa operasi `push` dan `pop` hingga menghasilkan isi stack 3 4 2 9 dari bawah ke atas. Saat ditampilkan, urutannya menjadi 9 2 4 3, kemudian setelah menggunakan `balikStack`, urutannya berubah menjadi 3 4 2 9.
@@ -457,7 +457,7 @@ int main() {
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2.1]()
+![Screenshot Output Unguided 2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-07/Screenshot_Output/Output-Unguided-2.png?raw=true)
 
 ### Penjelasan
 Pada soal ini ditambahkan prosedur `pushAscending` untuk memasukkan data ke dalam stack dengan urutan naik dari bawah ke atas. Sebelum memasukkan data, program memeriksa apakah stack masih memiliki ruang. Jika belum penuh, data yang lebih besar dari nilai baru akan digeser terlebih dahulu agar urutannya tetap terjaga. Setelah itu, data baru dimasukkan dan nilai `top` diperbarui. Pada `main.cpp`, dimasukkan data 3, 4, 8, 2, 3, dan 9 menggunakan prosedur `pushAscending`. Hasilnya adalah 9 8 4 3 3 2 saat ditampilkan, kemudian berubah menjadi 2 3 3 4 8 9 setelah stack dibalik.
@@ -609,8 +609,7 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3.1]()
-![Screenshot Output Unguided 3.1]()
+![Screenshot Output Unguided 3](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-07/Screenshot_Output/Output-Unguided-3.png?raw=true)
 
 ### Penjelasan
 Pada soal ini ditambahkan prosedur `getInputStream` untuk mengisi stack dari input yang dimasukkan pengguna. Input dibaca satu per satu menggunakan `cin.get()` sampai pengguna menekan enter. Setiap karakter diperiksa menggunakan `isdigit` agar hanya angka yang dimasukkan ke dalam stack. Karakter angka kemudian diubah menjadi nilai numerik dan disimpan menggunakan `push`. Dengan input 4729601, hasil yang ditampilkan adalah 1 0 6 9 2 7 4 karena angka terakhir berada di posisi paling atas. Setelah stack dibalik, urutannya menjadi 4 7 2 9 6 0 1.
