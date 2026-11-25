@@ -5,8 +5,7 @@
 ### A. Pengertian Queue<br/>
 Queue atau antrean adalah struktur data linear yang menggunakan prinsip FIFO (First In First Out), yaitu elemen yang pertama masuk menjadi elemen yang pertama keluar [1]. Prinsip ini kebalikan dari stack yang memakai LIFO [2][3]. Queue bisa dibuat dengan array (representasi tabel) atau linked list (representasi pointer) [1].
 
-### B. Komponen-Komponen dalam Queue <br/>
-Pada queue, penghapusan elemen dilakukan di bagian depan (`Head`) dan penambahan elemen dilakukan di bagian belakang (`Tail`) [1][4]. Karena itu queue punya dua penunjuk, yaitu `Head` dan `Tail`, sedangkan stack hanya punya satu yaitu `Top`. Pada representasi pointer, setiap elemen mempunyai `info` untuk menyimpan data dan `next` untuk menunjuk elemen berikutnya. Queue kosong ditandai dengan `Head = Nil` [1].<br> 
+Pada queue, penghapusan elemen dilakukan di bagian depan `Head` dan penambahan elemen dilakukan di bagian belakang `Tail` [1] [4]. Karena itu queue punya dua penunjuk, yaitu `Head` dan `Tail`, sedangkan stack hanya punya satu yaitu `Top`. Pada representasi pointer, setiap elemen mempunyai `info` untuk menyimpan data dan `next` untuk menunjuk elemen berikutnya. Queue kosong ditandai dengan `Head = Nil` [1].<br> 
 Contoh kode:
 ```C++
 typedef int infotype;
@@ -20,9 +19,9 @@ struct queue {
 };
 ```
 
-### C. Operasi dalam Queue <br/>
+### B. Operasi dalam Queue <br/>
 #### 1. Enqueue (Insert)
-Enqueue adalah operasi menambah elemen baru di belakang queue (`Tail`). Elemen baru dibuat dahulu, lalu `next` dari `Tail` lama diarahkan ke elemen baru, dan `Tail` dipindah ke elemen tersebut [1][4].<br> 
+Enqueue adalah operasi menambah elemen baru di belakang queue (`Tail`). Elemen baru dibuat dahulu, lalu `next` dari `Tail` lama diarahkan ke elemen baru, dan `Tail` dipindah ke elemen tersebut [1] [4].<br> 
 Contoh kode:
 ```C++
 void queue(address P){
@@ -31,7 +30,7 @@ void queue(address P){
 }
 ```
 #### 2. Dequeue (Delete) <br/>
-Dequeue adalah operasi mengambil elemen di depan queue (`Head`). Elemen `Head` disimpan di pointer `P`, lalu `Head` dipindah ke elemen berikutnya, dan `next` dari `P` diputus [1][4].<br> 
+Dequeue adalah operasi mengambil elemen di depan queue `Head`. Elemen `Head` disimpan di pointer `P`, lalu `Head` dipindah ke elemen berikutnya, dan `next` dari `P` diputus [1] [4].<br> 
 Contoh kode:
 ```C++
 address dequeue(address P) {
@@ -42,7 +41,7 @@ address dequeue(address P) {
 }
 ```
 
-### D. Primitif-Primitif dalam Queue<br/>
+### C. Primitif-Primitif dalam Queue<br/>
 Primitif queue ditulis dalam ADT, dengan deklarasi di file `.h` dan implementasi di file `.c` atau `.cpp` [1]. Primitif yang biasanya dipakai yaitu:
 #### 1. `isEmpty()`
 #### 2. `CreateQueue()`
@@ -52,16 +51,16 @@ Primitif queue ditulis dalam ADT, dengan deklarasi di file `.h` dan implementasi
 #### 6. `delete()`
 #### 7. `printInfo()`, `nbList()`, dan `delAll()`
 
-### E. Queue Representasi Tabel<br/>
+### D. Queue Representasi Tabel<br/>
 Prinsip kerja queue tabel sama dengan queue pointer. Bedanya, jumlah antrean pada tabel terbatas dan tidak perlu manajemen memori [1]. Ada tiga alternatif cara membuatnya [1].
 #### 1. Alternatif 1 (Head diam, Tail bergerak)
 `Head` selalu di indeks awal selama queue tidak kosong, dan `Tail` menunjuk elemen terakhir. Saat queue kosong, `Head` dan `Tail` bernilai -1 pada kode C++ ini [1].
 - Enqueue: `Tail` dimajukan. Jika queue kosong, `Head` diatur ke indeks awal.
-- Dequeue: elemen di `Head` diambil, lalu semua elemen sesudahnya digeser maju satu posisi dan `Tail` mundur. Cara ini kurang efisien karena setiap dequeue memerlukan pergeseran elemen
+- Dequeue: elemen di `Head` diambil, lalu semua elemen sesudahnya digeser maju satu posisi dan `Tail` mundur.
 #### 2. Alternatif 2 (Head bergerak, Tail bergerak)
 `Head` dan `Tail` sama-sama bergerak. `Head` maju ketika elemen dihapus [1].
 - Enqueue: `Tail` dimajukan seperti alternatif 1.
-- Dequeue: elemen di `Head` diambil lalu `Head` maju. Lebih efisien karena tidak ada pergeseran.
+- Dequeue: elemen di `Head` diambil lalu `Head` maju. 
 #### 3. Alternatif 3 (Head dan Tail berputar)
 `Head` dan `Tail` berputar dari indeks awal sampai akhir lalu kembali ke awal, sehingga tidak perlu menggeser elemen [1]. Ini disebut circular buffer [1][3].
 - Enqueue: `Tail` dimajukan. Jika sudah di indeks maksimum, `Tail` pindah ke indeks awal.
@@ -249,7 +248,7 @@ int main() {
     return 0;
 }
 ```
-Program ini membuat ADT Queue dengan pointer yang dibagi menjadi tiga file. File `queue.h` berisi struct `elmQ` dan `queue` dengan penunjuk `head` dan `tail`, serta deklarasi fungsi. File `queue.cpp` berisi fungsi untuk membuat, menambah (`insert`), mengambil (`deleteQueue`), mencari, dan menghitung elemen queue. Pada `main.cpp`, data 5, 2, dan 7 dimasukkan sehingga queue berisi 5 2 7 dengan `nbList` bernilai 3. Setelah itu `findElm` menemukan elemen 2 tetapi tidak menemukan 9. Saat `deleteQueue` dipanggil, elemen yang keluar adalah 5 karena masuk paling awal (FIFO), sehingga queue tersisa 2 7. Terakhir `delAll` menghapus semua elemen dan queue menjadi kosong.
+Program ini menggunakan ADT Queue berbasis pointer dengan struktur linked list yang memiliki penunjuk `head` dan `tail`. Program menyediakan fungsi untuk menambahkan, menghapus, mencari, dan menghitung elemen queue. Pada pengujian, data 5, 2, dan 7 dimasukkan sehingga jumlah elemen menjadi 3. Fungsi `findElm` berhasil menemukan data 2, sedangkan data 9 tidak ditemukan. Selanjutnya, `deleteQueue` mengeluarkan data 5 sesuai prinsip FIFO sehingga queue tersisa 2 dan 7. Terakhir, fungsi `delAll` menghapus seluruh elemen sehingga queue kembali kosong.
 
 ### 2. Program Queue Array
 #### a. File queue-array.h 
@@ -496,7 +495,7 @@ int main(){
     return 0;
 }
 ```
-Program ini membuat ADT Queue dengan array menggunakan data berupa nama (string). File `queue-array.h` berisi struct `queue` dengan array `nama` berukuran 5, serta `head` dan `tail`. File `queue-array.cpp` berisi `CreateQueue`, `isEmpty`, `isFull`, `enQueue`, `deQueue`, dan `viewQueue` dengan Implementasi 1 (head diam, tail bergerak) yang aktif, sedangkan Implementasi 2 dan 3 dikomentari. Pada `main.cpp`, enam nama dimasukkan tetapi Daffa ditolak karena queue penuh, lalu empat kali `deQueue` mengeluarkan Dimas, Arvin, Rizal, dan Hafizh sesuai prinsip FIFO, sehingga tersisa Fathur.
+Program ini menggunakan ADT Queue berbasis `array` dengan tipe data `string` untuk menyimpan nama. Queue memiliki kapasitas maksimal 5 elemen dan menerapkan Alternatif 1. Pada pengujian, lima nama berhasil dimasukkan, sedangkan nama Daffa ditolak karena queue sudah penuh. Selanjutnya, dilakukan empat kali `deQueue` yang mengeluarkan Dimas, Arvin, Rizal, dan Hafizh sesuai prinsip FIFO, sehingga tersisa nama Fathur di dalam queue.
 
 ## Unguided 
 ### 1. Buatlah ADT Queue menggunakan ARRAY sebagai berikut di dalam file “queue.h”:
@@ -554,8 +553,8 @@ Hello world!
 ```
 #### a. File queue.h
 ```C++
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef QUEUE_H_INCLUDED
+#define QUEUE_H_INCLUDED
 
 #include <iostream>
 using namespace std;
@@ -672,8 +671,8 @@ int main() {
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1]()
-Program ini menggunakan ADT Queue dengan array berukuran 5 dan menerapkan mekanisme Alternatif 1, yaitu head tetap di indeks 0 selama queue tidak kosong, sedangkan tail bergerak mengikuti penambahan elemen. Queue kosong ditandai dengan head dan tail bernilai -1, sedangkan queue penuh ketika tail mencapai indeks 4. Pada proses dequeue, elemen pertama diambil dan elemen berikutnya digeser satu posisi ke depan. Setelah seluruh proses enqueue dan dequeue dilakukan, queue kembali kosong karena semua elemen sudah dikeluarkan.
+![Screenshot Output Unguided 1](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-08/Screenshot-Output/Output-Unguided-1.png?raw=true)
+Program ini menggunakan ADT Queue dengan `array` berukuran 5 dan menerapkan Alternatif 1. Pada Alternatif 1, `head` selalu di indeks 0 dan hanya `tail` yang bergerak saat `enqueue`. Saat `dequeue`, elemen paling depan diambil lalu elemen sisanya digeser maju satu posisi, sehingga `tail` berkurang satu. Setelah `dequeue` pertama, isi queue berubah dari 5 2 7 menjadi 2 7 dengan `head` tetap 0 dan tail turun dari 2 menjadi 1. Queue kosong ditandai `head` dan `tail` bernilai -1, dan queue dianggap penuh jika `tail` berada di indeks 4. `dequeue` terakhir mengeluarkan elemen 4 sehingga queue kembali kosong.
 
 ### 2. Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme queue Alternatif 2 (head bergerak, tail bergerak).
 #### a. File queue.h
@@ -802,8 +801,8 @@ int main() {
 
 ### Output Unguided 2 :
 ##### Output 1
-![Screenshot Output Unguided 2]()
-Program ini menggunakan ADT Queue dengan mekanisme Alternatif 2, yaitu head dan tail sama-sama bergerak. Saat dequeue, head hanya bergeser ke indeks berikutnya tanpa memindahkan elemen sehingga lebih efisien. Namun, kondisi ini dapat menyebabkan penuh semu ketika tail mencapai indeks terakhir meskipun masih ada ruang kosong di depan head. Untuk mengatasinya, elemen akan digeser kembali ke awal array saat enqueue jika tail sudah mencapai indeks 4. Queue dinyatakan penuh ketika head berada di indeks 0 dan tail di indeks 4.
+![Screenshot Output Unguided 2](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-08/Screenshot-Output/Output-Unguided-2.png?raw=true)
+Program ini menggunakan ADT Queue dengan mekanisme Alternatif 2. Pada Alternatif 2, `head` dan `tail` sama-sama bergerak. `dequeue` hanya memajukan `head` tanpa menggeser elemen, jadi lebih efisien. Di output terlihat `head` naik dari 0 menjadi 1 setelah `dequeue` pertama, sedangkan `tail` tetap 2 sehingga isi queue menjadi 2 7. Kelemahannya adalah penuh semu, yaitu `tail` sudah di indeks 4 padahal masih ada ruang kosong di depan `head`. Karena itu `enqueue` menggeser elemen ke awal `array` jika `tail` sudah di indeks 4 dan `head` belum 0. Pada pengujian ini `tail` tidak sampai indeks 4, jadi pergeseran belum terjadi. Queue dinyatakan penuh jika head di indeks 0 dan `tail` di indeks 4.
 
 ### 3. Buatlah implementasi ADT Queue pada file “queue.cpp” dengan menerapkan mekanisme queue Alternatif 3 (head dan tail berputar).
 #### a. File queue.h
@@ -924,11 +923,11 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3]()
-Program ini menggunakan ADT Queue dengan mekanisme Alternatif 3, yaitu head dan tail bergerak secara melingkar. Pergerakan indeks menggunakan operasi modulo sehingga ketika mencapai indeks 4, posisi berikutnya kembali ke indeks 0. Pada proses dequeue, head berpindah ke posisi berikutnya tanpa menggeser elemen, sedangkan enqueue menambahkan elemen pada posisi tail berikutnya. Queue dinyatakan penuh jika posisi setelah tail sama dengan head. Dengan mekanisme ini, seluruh ruang array dapat dimanfaatkan tanpa perlu memindahkan elemen.
+![Screenshot Output Unguided 3](https://github.com/sarahmaulidya/109082530023_Sarah-Maulidya-Natasyah_Struktur-Data/blob/main/Modul-08/Screenshot-Output/Output-Unguided-3.png?raw=true)
+Program ini menggunakan ADT Queue dengan mekanisme Alternatif 3. Pada Alternatif 3, `head` dan `tail` bergerak melingkar memakai operasi modulo, jadi setelah indeks 4 posisi berikutnya kembali ke indeks 0 dan tidak perlu ada pergeseran elemen. Queue dinyatakan penuh jika posisi setelah `tail` sama dengan `head`. Pada pengujian ini `tail` tidak sampai indeks 4, sehingga hasilnya sama dengan Alternatif 2. Perbedaannya baru terlihat kalau `tail` melewati indeks 4, yaitu saat `tail` pindah ke indeks 0 sementara `head` masih di depan.
 
 ## Kesimpulan
-Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa queue merupakan struktur data yang menggunakan prinsip FIFO (First In First Out), yaitu data yang pertama masuk akan menjadi data pertama yang keluar. Queue memiliki dua operasi utama, yaitu `enqueue` untuk menambahkan data dan `dequeue` untuk mengambil data. Pada praktikum ini, queue diimplementasikan menggunakan tiga alternatif, yaitu Alternatif 1 yang menggeser elemen setiap dequeue, Alternatif 2 yang menggerakkan head dan tail tetapi masih dapat mengalami penuh semu, serta Alternatif 3 yang menggunakan sistem melingkar sehingga lebih efisien karena tidak memerlukan pergeseran elemen.
+Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa queue menggunakan prinsip FIFO (First In First Out), yaitu data yang pertama masuk menjadi data yang pertama keluar. Operasi utamanya adalah `enqueue` untuk menambah data dan `dequeue` untuk mengambil data. Tiga alternatif implementasi dengan `array` punya kelebihan dan kekurangan masing-masing. Alternatif 1 sederhana, tetapi setiap `dequeue` menggeser elemen. Alternatif 2 lebih efisien karena hanya memajukan `head`, tetapi bisa mengalami penuh semu. Alternatif 3 memakai sistem melingkar sehingga tidak perlu pergeseran dan seluruh ruang `array` bisa dipakai.
 
 ## Referensi
 [1] Informatics Lab, "Modul 8: Queue," in Modul Praktikum Struktur Data. Bandung, Indonesia: Fakultas Informatika, Telkom University, n.d., pp. 66-75. <br>
